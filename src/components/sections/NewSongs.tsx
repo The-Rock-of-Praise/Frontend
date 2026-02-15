@@ -67,7 +67,7 @@ const NewSongs = () => {
             </div>
 
             {/* --- Navigation & Logo --- */}
-            <nav className="fixed top-8 left-8 right-8 z-50 flex justify-between items-center">
+            {/* <nav className=" top-8 left-8 right-8 z-50 flex justify-between items-center">
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#1349ec] rounded-xl flex items-center justify-center shadow-lg shadow-[#1349ec]/20">
                         <Music size={20} className="text-white" />
@@ -77,7 +77,7 @@ const NewSongs = () => {
                 <button className="bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-full text-white/80 hover:text-white transition-all hover:scale-110">
                     <Search size={20} />
                 </button>
-            </nav>
+            </nav> */}
 
             {/* --- Main Content --- */}
             <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
