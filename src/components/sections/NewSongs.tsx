@@ -1,19 +1,62 @@
+import React, { useState } from 'react';
 import {
     ChevronLeft,
     ChevronRight,
     Play,
     Search,
     Music,
-    // SkipBack,
-    // SkipForward,
-    // PlayCircle,
-    // Volume2,
-    // Shuffle,
-    // Repeat,
     FileText
 } from 'lucide-react';
 
+// --- Dummy Data ---
+const SONGS_DATA = [
+    {
+        id: 1,
+        title: "Eternal Grace",
+        artist: "Praise Collective feat. Sarah Jenkins",
+        image: "https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&q=80&w=800",
+        badge: "Live Now"
+    },
+    {
+        id: 2,
+        title: "Mighty Fortress",
+        artist: "The Rock Worship",
+        image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=800",
+        badge: "New Release"
+    },
+    {
+        id: 3,
+        title: "Higher Ground",
+        artist: "Unity Choir",
+        image: "https://images.unsplash.com/photo-1514525253361-bee8718a7439?auto=format&fit=crop&q=80&w=800",
+        badge: "Trending"
+    },
+    {
+        id: 4,
+        title: "Ocean of Mercy",
+        artist: "David Perera",
+        image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80&w=800",
+        badge: "Original"
+    }
+];
+
 const NewSongs = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev === SONGS_DATA.length - 1 ? 0 : prev + 1));
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev === 0 ? SONGS_DATA.length - 1 : prev - 1));
+    };
+
+    // Logic to get neighbor indices for the 3D effect
+    const leftIndex = (currentIndex - 1 + SONGS_DATA.length) % SONGS_DATA.length;
+    const rightIndex = (currentIndex + 1) % SONGS_DATA.length;
+
+    const currentSong = SONGS_DATA[currentIndex];
+
     return (
         <div className="bg-[#0a0c14] text-white min-h-screen font-['Poppins']">
 
@@ -39,7 +82,6 @@ const NewSongs = () => {
             {/* --- Main Content --- */}
             <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
 
-                {/* Header Section */}
                 <header className="mb-12 text-center">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/20 border border-[#1349ec]/30 text-[#1349ec] text-sm font-semibold tracking-widest uppercase mb-4">
                         Exclusive Premiere
@@ -52,27 +94,31 @@ const NewSongs = () => {
                 <div className="relative w-full max-w-7xl flex items-center justify-center gap-4 md:gap-12 py-12">
 
                     {/* Left Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-30 scale-75 blur-sm transition-all duration-500">
+                    <div className="hidden lg:block relative group opacity-20 scale-75 blur-sm transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
-                            <img alt="Album" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=800" />
+                            <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[leftIndex].image} />
                         </div>
                     </div>
 
-                    {/* Previous Navigation */}
-                    <button className="absolute left-4 md:left-20 z-30 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50">
+                    {/* Previous Button */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-4 md:left-20 z-40 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50 active:scale-90"
+                    >
                         <ChevronLeft size={32} />
                     </button>
 
                     {/* Center Slide (Active) */}
-                    <div className="relative z-20 transition-all duration-500 transform scale-100 lg:scale-110">
+                    <div key={currentSong.id} className="relative z-20 transition-all duration-500 transform scale-100 lg:scale-110 animate-in fade-in zoom-in duration-700">
                         <div className="relative group">
-                            {/* Outer Glow */}
                             <div className="absolute -inset-1 bg-gradient-to-r from-[#1349ec] to-cyan-400 rounded-[2.2rem] blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
 
                             <div className="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-[2rem] overflow-hidden border-2 border-white/20 shadow-[0_0_50px_rgba(19,73,236,0.3)]">
-                                <img alt="Current Album" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&q=80&w=800" />
+                                <img alt={currentSong.title} className="w-full h-full object-cover" src={currentSong.image} />
                                 <div className="absolute top-6 right-6">
-                                    <span className="bg-[#1349ec] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white">Live Now</span>
+                                    <span className="bg-[#1349ec] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-lg">
+                                        {currentSong.badge}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -80,9 +126,9 @@ const NewSongs = () => {
                         {/* Song Info */}
                         <div className="mt-12 text-center">
                             <h2 className="text-3xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent tracking-tight">
-                                Eternal Grace
+                                {currentSong.title}
                             </h2>
-                            <p className="text-[#1349ec] text-xl font-medium tracking-wide">Praise Collective feat. Sarah Jenkins</p>
+                            <p className="text-[#1349ec] text-xl font-medium tracking-wide">{currentSong.artist}</p>
 
                             <div className="mt-8 flex items-center justify-center gap-4">
                                 <button className="bg-[#1349ec] hover:bg-[#1349ec]/80 text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-[#1349ec]/40 group/btn">
@@ -97,51 +143,35 @@ const NewSongs = () => {
                         </div>
                     </div>
 
-                    {/* Next Navigation */}
-                    <button className="absolute right-4 md:right-20 z-30 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50">
+                    {/* Next Button */}
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-4 md:right-20 z-40 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50 active:scale-90"
+                    >
                         <ChevronRight size={32} />
                     </button>
 
                     {/* Right Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-30 scale-75 blur-sm transition-all duration-500">
+                    <div className="hidden lg:block relative group opacity-20 scale-75 blur-sm transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
-                            <img alt="Album" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1514525253361-bee8718a7439?auto=format&fit=crop&q=80&w=800" />
+                            <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[rightIndex].image} />
                         </div>
                     </div>
                 </div>
 
                 {/* --- Pagination Dots --- */}
                 <footer className="mt-8 mb-10 flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
-                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
-                    <div className="w-10 h-2.5 rounded-full bg-[#1349ec] shadow-[0_0_15px_rgba(19,73,236,0.6)]"></div>
-                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
-                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
+                    {SONGS_DATA.map((_, index) => (
+                        <div
+                            key={index}
+                            className={`transition-all duration-500 rounded-full ${currentIndex === index
+                                ? "w-10 h-2.5 bg-[#1349ec] shadow-[0_0_15px_rgba(19,73,236,0.6)]"
+                                : "w-2 h-2 bg-white/10"
+                                }`}
+                        />
+                    ))}
                 </footer>
             </main>
-
-            {/* --- Player Controls Bar --- */}
-            {/* <div className="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-8 bg-white/5 backdrop-blur-2xl border border-white/10 px-10 py-5 rounded-[2.5rem] shadow-2xl z-50">
-                <div className="hidden md:flex items-center gap-4 border-r border-white/10 pr-8">
-                    <Shuffle size={18} className="text-white/40 cursor-pointer hover:text-[#1349ec] transition" />
-                    <Repeat size={18} className="text-white/40 cursor-pointer hover:text-[#1349ec] transition" />
-                </div>
-
-                <div className="flex items-center gap-8">
-                    <button className="text-white/80 hover:text-[#1349ec] transition"><SkipBack size={28} /></button>
-                    <button className="bg-white text-[#0a0c14] w-14 h-14 flex items-center justify-center rounded-2xl hover:scale-110 transition shadow-xl">
-                        <PlayCircle size={32} />
-                    </button>
-                    <button className="text-white/80 hover:text-[#1349ec] transition"><SkipForward size={28} /></button>
-                </div>
-
-                <div className="hidden lg:flex items-center gap-4 border-l border-white/10 pl-8">
-                    <Volume2 size={18} className="text-white/40" />
-                    <div className="w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#1349ec] w-2/3"></div>
-                    </div>
-                </div>
-            </div> */}
         </div>
     );
 };
