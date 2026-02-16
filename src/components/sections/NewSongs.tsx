@@ -37,6 +37,13 @@ const SONGS_DATA = [
         artist: "David Perera",
         image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80&w=800",
         badge: "Original"
+    },
+    {
+        id: 5,
+        title: "River of Life",
+        artist: "Grace Symphony",
+        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
+        badge: "Classic"
     }
 ];
 
