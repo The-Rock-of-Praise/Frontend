@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     ChevronLeft,
     ChevronRight,
     Play,
-    Search,
-    Music,
+    // Search,
+    // Music,
     FileText
 } from 'lucide-react';
 
@@ -14,7 +14,7 @@ const SONGS_DATA = [
         id: 1,
         title: "Eternal Grace",
         artist: "Praise Collective feat. Sarah Jenkins",
-        image: "https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop",
         badge: "Live Now"
     },
     {
@@ -28,7 +28,7 @@ const SONGS_DATA = [
         id: 3,
         title: "Higher Ground",
         artist: "Unity Choir",
-        image: "https://images.unsplash.com/photo-1514525253361-bee8718a7439?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop",
         badge: "Trending"
     },
     {
