@@ -35,13 +35,24 @@ const REVIEWS = [
 ];
 
 const Downloads = () => {
+    const StatItem = ({ value, label }: { value: string, label: string }) => (
+        <div className="text-center group">
+            <p className="text-4xl md:text-5xl font-black text-[#1349ec] mb-2 group-hover:scale-110 transition-transform duration-500">
+                {value}
+            </p>
+            <p className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">{label}</p>
+        </div>
+    );
+
     return (
         <div className="relative bg-[#f6f6f8] text-slate-900 font-['Poppins'] min-h-screen py-20">
 
             {/* --- Decorative Blobs --- */}
-            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1349ec]/10 blur-[100px] rounded-full z-0"></div>
-            <div className="absolute top-1/2 right-[-10%] w-[400px] h-[400px] bg-sky-400/10 blur-[100px] rounded-full z-0"></div>
-            <div className="absolute bottom-[-10%] left-[20%] w-[300px] h-[300px] bg-[#1349ec]/10 blur-[100px] rounded-full z-0"></div>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1349ec]/10 blur-[100px] rounded-full"></div>
+                <div className="absolute top-1/2 right-[-10%] w-[400px] h-[400px] bg-sky-400/10 blur-[100px] rounded-full"></div>
+                <div className="absolute bottom-[-10%] left-[20%] w-[300px] h-[300px] bg-[#1349ec]/10 blur-[100px] rounded-full"></div>
+            </div>
 
             <main className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -179,24 +190,14 @@ const Downloads = () => {
                 </div>
 
                 {/* --- Stats Footer --- */}
-                <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-slate-200/60 text-center">
-                    <div>
-                        <h4 className="text-4xl font-black text-[#1349ec] mb-1">500k+</h4>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Downloads</p>
+                <footer className="max-w-7xl mx-auto px-6 pb-5">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-slate-200">
+                        <StatItem value="500k+" label="Downloads" />
+                        <StatItem value="4.9" label="Rating" />
+                        <StatItem value="120+" label="Countries" />
+                        <StatItem value="24/7" label="Worship" />
                     </div>
-                    <div>
-                        <h4 className="text-4xl font-black text-[#1349ec] mb-1">4.9</h4>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Rating</p>
-                    </div>
-                    <div>
-                        <h4 className="text-4xl font-black text-[#1349ec] mb-1">120+</h4>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Countries</p>
-                    </div>
-                    <div>
-                        <h4 className="text-4xl font-black text-[#1349ec] mb-1">24/7</h4>
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Worship</p>
-                    </div>
-                </div>
+                </footer>
             </main>
         </div>
     );
