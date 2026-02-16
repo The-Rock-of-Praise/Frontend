@@ -6,6 +6,7 @@ import About from './components/sections/About';
 import Features from './components/sections/Features';
 import NewSongs from './components/sections/NewSongs';
 import Downloads from './components/sections/Downloads';
+import Vision from './components/sections/Vision';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
 
         <div>
           <NewSongs />
+        </div>
+
+        <div>
+          <Vision />
         </div>
 
         <div>
