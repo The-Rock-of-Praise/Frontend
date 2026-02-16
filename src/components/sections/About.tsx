@@ -14,59 +14,54 @@ import {
 
 const About = () => {
     return (
-        <section className="min-h-screen relative flex items-center overflow-hidden bg-white">
+        /* ප්‍රධාන පසුබිම Downloads Section එකට සමාන කළා */
+        <section className="min-h-screen relative flex items-center overflow-hidden bg-[#f6f6f8] font-['Poppins']">
 
-            {/* Split Background Effect */}
-            <div className="absolute inset-0 z-0 flex">
-                <div className="w-full lg:w-1/2 bg-[#0A1128]"></div>
-                <div className="hidden lg:block w-1/2 bg-white"></div>
+            {/* --- Decorative Blobs (Same as Downloads Section for Consistency) --- */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#1349ec]/5 blur-[120px] rounded-full"></div>
+                <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-sky-400/10 blur-[120px] rounded-full"></div>
             </div>
 
-            {/* Geometry Pattern & Ambient Glow */}
-            <div className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2338bdf8' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}>
-            </div>
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] z-0"></div>
-
-            <div className="max-w-[1400px] mx-auto w-full px-6 lg:px-12 relative z-10 py-20">
+            <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10 py-20">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Text Content */}
-                    <div className="text-white space-y-12">
+                    <div className="space-y-12">
                         <div className="space-y-4">
-                            <span className="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#38BDF8] text-sm font-semibold tracking-wider uppercase">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 text-[#1349ec] text-sm font-bold tracking-wider uppercase">
                                 Our Essence
                             </span>
-                            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
+                            <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-tight text-slate-900">
                                 The Rock of <br />
-                                <span className="text-[#38BDF8] drop-shadow-[0_0_15px_rgba(56,189,248,0.4)]">Praise</span>
+                                <span className="text-[#1349ec]">Praise</span>
                             </h1>
-                            <p className="text-slate-300 text-lg max-w-lg leading-relaxed font-light">
-                                Elevating worship through digital excellence, bridging hearts and technology.
+                            <p className="text-slate-500 text-xl max-w-lg leading-relaxed font-medium">
+                                Elevating worship through digital excellence, bridging hearts and technology with grace.
                             </p>
                         </div>
 
-                        {/* Vision & Mission */}
-                        <div className="space-y-10">
+                        {/* Vision & Mission Cards */}
+                        <div className="space-y-8">
                             <div className="flex gap-6 items-start group">
-                                <div className="mt-1 bg-[#1C2541] p-4 rounded-2xl border border-white/10 group-hover:border-[#38BDF8]/50 transition-all shadow-xl text-[#38BDF8]">
+                                <div className="mt-1 bg-white p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
                                     <Eye size={28} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2">Vision</h3>
-                                    <p className="text-slate-400 leading-relaxed max-w-md font-light">
+                                    <h3 className="text-xl font-bold mb-2 text-slate-900">Vision</h3>
+                                    <p className="text-slate-500 leading-relaxed max-w-md">
                                         To revolutionize the worship experience by providing a seamless digital bridge between traditional reverence and modern accessibility.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex gap-6 items-start group">
-                                <div className="mt-1 bg-[#1C2541] p-4 rounded-2xl border border-white/10 group-hover:border-[#38BDF8]/50 transition-all shadow-xl text-[#38BDF8]">
+                                <div className="mt-1 bg-white p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
                                     <Sparkles size={28} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2">Mission</h3>
-                                    <p className="text-slate-400 leading-relaxed max-w-md font-light">
+                                    <h3 className="text-xl font-bold mb-2 text-slate-900">Mission</h3>
+                                    <p className="text-slate-500 leading-relaxed max-w-md">
                                         Simplifying worship management through intuitive software that handles lyrics, chords, and multilingual support with effortless elegance.
                                     </p>
                                 </div>
@@ -75,16 +70,15 @@ const About = () => {
 
                         {/* Language Chips */}
                         <div className="pt-8 space-y-4">
-                            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500">Multilingual Core</h4>
+                            <h4 className="text-xs uppercase tracking-[0.2em] font-black text-slate-400">Multilingual Core</h4>
                             <div className="flex flex-wrap gap-3">
-                                <button className="bg-gradient-to-br from-[#1349ec] to-[#38BDF8] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-                                    <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                <button className="bg-[#1349ec] text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/20 hover:scale-105 transition-transform">
                                     English
                                 </button>
-                                <button className="bg-white/5 border border-white/10 hover:border-[#38BDF8]/40 text-slate-300 px-6 py-2.5 rounded-full text-sm font-medium transition-all">
+                                <button className="bg-[#1349ec] text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/20 hover:scale-105 transition-transform">
                                     සිංහල
                                 </button>
-                                <button className="bg-white/5 border border-white/10 hover:border-[#38BDF8]/40 text-slate-300 px-6 py-2.5 rounded-full text-sm font-medium transition-all">
+                                <button className="bg-[#1349ec] text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/20 hover:scale-105 transition-transform">
                                     தமிழ்
                                 </button>
                             </div>
@@ -93,29 +87,29 @@ const About = () => {
 
                     {/* Right Column: Visuals & Feature Grid */}
                     <div className="relative py-12">
-                        {/* 3D Video Mockup */}
-                        <div className="relative z-20 -ml-0 lg:-ml-12 transform perspective-[1000px] rotate-y-[-5deg] rotate-x-[2deg] transition-transform hover:rotate-0 duration-700">
-                            <div className="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 shadow-[40px_40px_80px_-20px_rgba(0,0,0,0.3)] relative border-[8px] border-white">
+                        {/* Video Mockup with White Border for Premium Look */}
+                        <div className="relative z-20 lg:-ml-12 transform hover:scale-[1.02] transition-transform duration-700">
+                            <div className="aspect-video w-full rounded-[2rem] overflow-hidden bg-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative border-[12px] border-white">
                                 <img
                                     alt="Worship visuals"
-                                    className="w-full h-full object-cover opacity-80"
+                                    className="w-full h-full object-cover opacity-90"
                                     src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=1000"
                                 />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <button className="w-20 h-20 bg-white/20 backdrop-blur-md border border-white/40 text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
-                                        <Play size={40} fill="currentColor" />
+                                <div className="absolute inset-0 flex items-center justify-center bg-slate-900/20">
+                                    <button className="w-20 h-20 bg-white text-[#1349ec] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
+                                        <Play size={32} fill="currentColor" className="ml-1" />
                                     </button>
                                 </div>
 
-                                {/* Custom Video Controls */}
-                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-[#0f172a]/60 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 flex items-center justify-between">
-                                    <div className="flex items-center gap-4 text-white">
-                                        <Pause size={18} />
-                                        <div className="w-32 h-1 bg-white/20 rounded-full relative">
-                                            <div className="absolute top-0 left-0 h-full w-2/3 bg-[#38BDF8] rounded-full"></div>
+                                {/* Custom Video Controls (Updated for Light Theme) */}
+                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 backdrop-blur-md rounded-2xl px-6 py-4 flex items-center justify-between shadow-xl">
+                                    <div className="flex items-center gap-4 text-slate-900">
+                                        <Pause size={18} fill="currentColor" />
+                                        <div className="w-32 h-1.5 bg-slate-200 rounded-full relative overflow-hidden">
+                                            <div className="absolute top-0 left-0 h-full w-2/3 bg-[#1349ec] rounded-full"></div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-4 text-white/80">
+                                    <div className="flex items-center gap-4 text-slate-500">
                                         <Volume2 size={18} />
                                         <Maximize size={18} />
                                     </div>
@@ -123,8 +117,8 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* Feature Cards Grid */}
-                        <div className="mt-16 grid sm:grid-cols-2 gap-6 relative z-10">
+                        {/* Feature Cards Grid (Updated to match other components) */}
+                        <div className="mt-12 grid sm:grid-cols-2 gap-6 relative z-10">
                             <AboutFeatureCard Icon={ScrollText} title="Lyric Control" desc="Smooth, latency-free transitions for lyrics in any environment." />
                             <AboutFeatureCard Icon={Music} title="Chord Engine" desc="Instantly transpose and share charts with your entire band." />
                             <AboutFeatureCard Icon={Users} title="Leader Focused" desc="Intuitive interface designed to keep you focused on worship." />
@@ -140,12 +134,12 @@ const About = () => {
 
 // Sub-component for Feature Cards
 const AboutFeatureCard = ({ Icon, title, desc }: { Icon: any, title: string, desc: string }) => (
-    <div className="bg-white/80 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
-        <div className="w-12 h-12 rounded-xl bg-[#1349ec]/10 flex items-center justify-center mb-4 text-[#1349ec] group-hover:bg-[#1349ec] group-hover:text-white transition-colors">
-            <Icon size={24} strokeWidth={1.5} />
+    <div className="bg-white p-6 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-white hover:border-[#1349ec]/20 hover:-translate-y-1 transition-all duration-300 group">
+        <div className="w-12 h-12 rounded-2xl bg-[#1349ec]/10 flex items-center justify-center mb-4 text-[#1349ec] group-hover:bg-[#1349ec] group-hover:text-white transition-all duration-500">
+            <Icon size={24} strokeWidth={2} />
         </div>
         <h4 className="font-bold text-slate-900 mb-2">{title}</h4>
-        <p className="text-sm text-slate-500 font-light leading-relaxed">{desc}</p>
+        <p className="text-sm text-slate-500 font-medium leading-relaxed">{desc}</p>
     </div>
 );
 
