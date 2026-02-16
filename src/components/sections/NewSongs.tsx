@@ -3,12 +3,9 @@ import {
     ChevronLeft,
     ChevronRight,
     Play,
-    // Search,
-    // Music,
     FileText
 } from 'lucide-react';
 
-// --- Dummy Data ---
 const SONGS_DATA = [
     {
         id: 1,
@@ -58,72 +55,62 @@ const NewSongs = () => {
         setCurrentIndex((prev) => (prev === 0 ? SONGS_DATA.length - 1 : prev - 1));
     };
 
-    // Logic to get neighbor indices for the 3D effect
     const leftIndex = (currentIndex - 1 + SONGS_DATA.length) % SONGS_DATA.length;
     const rightIndex = (currentIndex + 1) % SONGS_DATA.length;
-
     const currentSong = SONGS_DATA[currentIndex];
 
     return (
-        <div className="bg-[#0a0c14] text-white min-h-screen font-['Poppins']">
+        <div className="bg-[#f6f6f8] text-slate-900 min-h-screen font-['Poppins'] relative overflow-hidden">
 
-            {/* --- Dynamic Background Layer --- */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1349ec]/10 via-[#0a0c14] to-[#0a0c14]"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-20 blur-[120px] bg-[#1349ec] rounded-full"></div>
+            {/* --- Ambient Decoration --- */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#1349ec]/5 blur-[120px] rounded-full"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#1349ec]/10 blur-[100px] rounded-full"></div>
             </div>
 
-            {/* --- Navigation & Logo --- */}
-            {/* <nav className=" top-8 left-8 right-8 z-50 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#1349ec] rounded-xl flex items-center justify-center shadow-lg shadow-[#1349ec]/20">
-                        <Music size={20} className="text-white" />
-                    </div>
-                    <span className="font-bold text-xl tracking-tight hidden md:block">ROCK OF PRAISE</span>
-                </div>
-                <button className="bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-full text-white/80 hover:text-white transition-all hover:scale-110">
-                    <Search size={20} />
-                </button>
-            </nav> */}
+            <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12">
 
-            {/* --- Main Content --- */}
-            <main className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
-
+                {/* --- Header Section --- */}
                 <header className="mb-12 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/20 border border-[#1349ec]/30 text-[#1349ec] text-sm font-semibold tracking-widest uppercase mb-4">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 border border-[#1349ec]/20 text-[#1349ec] text-xs font-bold tracking-[0.2em] uppercase mb-4">
                         Exclusive Premiere
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">New Song Updates</h1>
-                    <p className="text-slate-400 text-lg">Experience the latest sounds from the worship community</p>
+                    <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-4">
+                        New Song <span className="text-[#1349ec]">Updates</span>
+                    </h1>
+                    <p className="text-slate-500 text-lg max-w-md mx-auto">
+                        Experience the latest sounds from the worship community
+                    </p>
                 </header>
 
                 {/* --- 3D Slider Section --- */}
-                <div className="relative w-full max-w-7xl flex items-center justify-center gap-4 md:gap-12 py-12">
+                <div className="relative w-full max-w-7xl flex items-center justify-center gap-4 md:gap-12 py-8">
 
-                    {/* Left Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-40 scale-90 blur-[2px] transition-all duration-700">
-                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
+                    {/* Left Slide (Background) */}
+                    <div className="hidden lg:block relative opacity-30 scale-90 grayscale transition-all duration-700">
+                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden shadow-xl">
                             <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[leftIndex].image} />
                         </div>
                     </div>
 
-                    {/* Previous Button */}
+                    {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 md:left-20 z-40 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50 active:scale-90"
+                        className="absolute left-0 md:left-10 z-40 bg-white border border-slate-200 p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
                     >
-                        <ChevronLeft size={32} />
+                        <ChevronLeft size={28} />
                     </button>
 
                     {/* Center Slide (Active) */}
-                    <div key={currentSong.id} className="relative z-20 transition-all duration-500 transform scale-100 lg:scale-110 animate-in fade-in zoom-in duration-700">
+                    <div key={currentSong.id} className="relative z-20 transition-all duration-500 transform scale-100 lg:scale-105 animate-in fade-in zoom-in duration-700">
                         <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-[#1349ec] to-cyan-400 rounded-[2.2rem] blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
+                            {/* Blue glow effect for center card */}
+                            <div className="absolute -inset-4 bg-[#1349ec]/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-                            <div className="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-[2rem] overflow-hidden border-2 border-white/20 shadow-[0_0_50px_rgba(19,73,236,0.3)]">
+                            <div className="relative w-72 h-72 md:w-[420px] md:h-[420px] rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl shadow-blue-200">
                                 <img alt={currentSong.title} className="w-full h-full object-cover" src={currentSong.image} />
                                 <div className="absolute top-6 right-6">
-                                    <span className="bg-[#1349ec] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-lg">
+                                    <span className="bg-[#1349ec] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xl">
                                         {currentSong.badge}
                                     </span>
                                 </div>
@@ -131,18 +118,18 @@ const NewSongs = () => {
                         </div>
 
                         {/* Song Info */}
-                        <div className="mt-12 text-center">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-2 bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent tracking-tight">
+                        <div className="mt-10 text-center">
+                            <h2 className="text-3xl md:text-5xl font-black mb-2 text-slate-900 tracking-tight">
                                 {currentSong.title}
                             </h2>
-                            <p className="text-[#1349ec] text-xl font-medium tracking-wide">{currentSong.artist}</p>
+                            <p className="text-[#1349ec] text-lg md:text-xl font-bold tracking-wide uppercase">{currentSong.artist}</p>
 
-                            <div className="mt-8 flex items-center justify-center gap-4">
-                                <button className="bg-[#1349ec] hover:bg-[#1349ec]/80 text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-[#1349ec]/40 group/btn">
+                            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <button className="w-full sm:w-auto bg-[#1349ec] hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-blue-200 active:scale-95">
                                     <Play size={20} fill="currentColor" />
                                     Listen Now
                                 </button>
-                                <button className="bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-2 transition-all">
+                                <button className="w-full sm:w-auto bg-white border border-slate-200 hover:border-[#1349ec] text-slate-600 hover:text-[#1349ec] px-10 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-sm active:scale-95">
                                     <FileText size={20} />
                                     View Lyrics
                                 </button>
@@ -150,30 +137,30 @@ const NewSongs = () => {
                         </div>
                     </div>
 
-                    {/* Next Button */}
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 md:right-20 z-40 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-full text-white/70 hover:text-white transition-all hover:scale-110 hover:border-[#1349ec]/50 active:scale-90"
+                        className="absolute right-0 md:right-10 z-40 bg-white border border-slate-200 p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
                     >
-                        <ChevronRight size={32} />
+                        <ChevronRight size={28} />
                     </button>
 
-                    {/* Right Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-40 scale-90 blur-[2px] transition-all duration-700">
-                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
+                    {/* Right Slide (Background) */}
+                    <div className="hidden lg:block relative opacity-30 scale-90 grayscale transition-all duration-700">
+                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden shadow-xl">
                             <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[rightIndex].image} />
                         </div>
                     </div>
                 </div>
 
                 {/* --- Pagination Dots --- */}
-                <footer className="mt-8 mb-10 flex items-center gap-3">
+                <footer className="mt-12 flex items-center gap-3">
                     {SONGS_DATA.map((_, index) => (
-                        <div
+                        <button
                             key={index}
+                            onClick={() => setCurrentIndex(index)}
                             className={`transition-all duration-500 rounded-full ${currentIndex === index
-                                ? "w-10 h-2.5 bg-[#1349ec] shadow-[0_0_15px_rgba(19,73,236,0.6)]"
-                                : "w-2 h-2 bg-white/10"
+                                ? "w-12 h-2.5 bg-[#1349ec]"
+                                : "w-2.5 h-2.5 bg-slate-300 hover:bg-[#1349ec]/40"
                                 }`}
                         />
                     ))}

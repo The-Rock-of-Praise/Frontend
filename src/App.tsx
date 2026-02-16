@@ -5,6 +5,7 @@ import Home from './components/sections/Home';
 import About from './components/sections/About';
 import Features from './components/sections/Features';
 import NewSongs from './components/sections/NewSongs';
+import Downloads from './components/sections/Downloads';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
         <div>
           <NewSongs />
+        </div>
+
+        <div>
+          <Downloads />
         </div>
 
 
