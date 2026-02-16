@@ -94,7 +94,7 @@ const NewSongs = () => {
                 <div className="relative w-full max-w-7xl flex items-center justify-center gap-4 md:gap-12 py-12">
 
                     {/* Left Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-20 scale-75 blur-sm transition-all duration-700">
+                    <div className="hidden lg:block relative group opacity-40 scale-90 blur-[2px] transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
                             <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[leftIndex].image} />
                         </div>
@@ -152,7 +152,7 @@ const NewSongs = () => {
                     </button>
 
                     {/* Right Slide (Inactive) */}
-                    <div className="hidden lg:block relative group opacity-20 scale-75 blur-sm transition-all duration-700">
+                    <div className="hidden lg:block relative group opacity-40 scale-90 blur-[2px] transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border border-white/10">
                             <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[rightIndex].image} />
                         </div>
