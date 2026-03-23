@@ -8,6 +8,7 @@ import {
     ScrollText,
     Eye,
 } from 'lucide-react';
+import Profile from '../../assets/Profile.jpeg';
 
 const Vision = () => {
     const [activeTab, setActiveTab] = useState('Behind the Vision');
@@ -30,7 +31,7 @@ const Vision = () => {
                         <img
                             alt="Founder Johnson Shan"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                            src={Profile}
                         />
                         {/* Light Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>

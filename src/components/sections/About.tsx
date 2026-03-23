@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Eye,
     Sparkles,
@@ -6,13 +5,51 @@ import {
     Languages,
     Users,
     ScrollText,
-    Play,
+    // Play,
     Pause,
     Maximize,
-    Volume2
+    Volume2,
+    VolumeOff,
+    Play,
 } from 'lucide-react';
+import Intro from '../../assets/Intro.mp4';
+import { useRef, useState } from 'react';
+import VideoIntro from '../../assets/Intro.jpg';
 
 const About = () => {
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+    const [progress, setProgress] = useState(0);
+    const [isMuted, setIsMuted] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    // Timeline update 
+    const handleTimeUpdate = () => {
+        const video = videoRef.current;
+        if (video && video.duration) {
+            const currentProgress = (video.currentTime / video.duration) * 100;
+            setProgress(currentProgress);
+        }
+    };
+
+    // Play or Pause 
+    const togglePlay = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
+
+    // Full screen 
+    const toggleFullScreen = () => {
+        if (videoRef.current) {
+            videoRef.current.requestFullscreen();
+        }
+    };
+
     return (
         /* ප්‍රධාන පසුබිම Downloads Section එකට සමාන කළා */
         <section className="min-h-screen relative flex items-center overflow-hidden bg-[#f6f6f8] font-['Poppins']">
@@ -90,28 +127,50 @@ const About = () => {
                         {/* Video Mockup with White Border for Premium Look */}
                         <div className="relative z-20 lg:-ml-12 transform hover:scale-[1.02] transition-transform duration-700">
                             <div className="aspect-video w-full rounded-[2rem] overflow-hidden bg-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative border-[12px] border-white">
-                                <img
-                                    alt="Worship visuals"
+                                <video
+                                    ref={videoRef}
+                                    onTimeUpdate={handleTimeUpdate}
                                     className="w-full h-full object-cover opacity-90"
-                                    src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=1000"
-                                />
-                                <div className="absolute inset-0 flex items-center justify-center bg-slate-900/20">
-                                    <button className="w-20 h-20 bg-white text-[#1349ec] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
-                                        <Play size={32} fill="currentColor" className="ml-1" />
-                                    </button>
-                                </div>
+                                    autoPlay
+                                    loop
+                                    muted={isMuted} // Mute state එකට link කළා
+                                    playsInline
+                                    poster={VideoIntro}
+                                >
+                                    <source src={Intro} type="video/mp4" />
+                                </video>
 
-                                {/* Custom Video Controls (Updated for Light Theme) */}
+                                {/* Play/Pause Overlay (වීඩියෝ එක මැද තියෙන බටන් එක) */}
+                                {!isPlaying && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-slate-900/20">
+                                        <button onClick={togglePlay} className="w-20 h-20 bg-white text-[#1349ec] rounded-full flex items-center justify-center shadow-2xl">
+                                            <Play size={32} fill="currentColor" className="ml-1" />
+                                        </button>
+                                    </div>
+                                )}
+
+                                {/* Custom Control Bar */}
                                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 backdrop-blur-md rounded-2xl px-6 py-4 flex items-center justify-between shadow-xl">
                                     <div className="flex items-center gap-4 text-slate-900">
-                                        <Pause size={18} fill="currentColor" />
+                                        <button onClick={togglePlay} className="text-[#1349ec]">
+                                            {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
+                                        </button>
                                         <div className="w-32 h-1.5 bg-slate-200 rounded-full relative overflow-hidden">
-                                            <div className="absolute top-0 left-0 h-full w-2/3 bg-[#1349ec] rounded-full"></div>
+                                            <div
+                                                className="absolute top-0 left-0 h-full bg-[#1349ec] rounded-full transition-all duration-100"
+                                                style={{ width: `${progress}%` }}
+                                            ></div>
                                         </div>
                                     </div>
+
                                     <div className="flex items-center gap-4 text-slate-500">
-                                        <Volume2 size={18} />
-                                        <Maximize size={18} />
+                                        {/* Volume Button */}
+                                        <button onClick={() => setIsMuted(!isMuted)} className="text-[#1349ec] hover:scale-110 transition-transform">
+                                            {isMuted ? <VolumeOff size={18} /> : <Volume2 size={18} />}
+                                        </button>
+                                        <button onClick={toggleFullScreen} className="hover:text-[#1349ec]">
+                                            <Maximize size={18} />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
