@@ -6,11 +6,8 @@ import {
     Globe, 
     Shield, 
     Star, 
-    Sparkles, 
     PlayCircle, 
-    Heart, 
     Download, 
-    ArrowRight, 
     CheckCircle2, 
     Gem,
     TrendingUp
