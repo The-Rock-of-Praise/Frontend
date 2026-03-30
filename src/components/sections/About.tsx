@@ -136,6 +136,7 @@ const About = () => {
                                     muted={isMuted} // Mute state එකට link කළා
                                     playsInline
                                     poster={VideoIntro}
+                                    style={{ objectFit: 'cover' }}
                                 >
                                     <source src={Intro} type="video/mp4" />
                                 </video>

@@ -4,9 +4,10 @@ import Footer from './components/layout/Footer';
 import Home from './components/sections/Home';
 import About from './components/sections/About';
 import Features from './components/sections/Features';
-import NewSongs from './components/sections/NewSongs';
+import NewReleases from './components/sections/NewReleases';
 import Downloads from './components/sections/Downloads';
 import Vision from './components/sections/Vision';
+import ProVersion from './components/sections/ProVersion';
 
 function App() {
   return (
@@ -26,7 +27,11 @@ function App() {
         </div>
 
         <div>
-          <NewSongs />
+          <ProVersion />
+        </div>
+
+        <div>
+          <NewReleases />
         </div>
 
         <div>

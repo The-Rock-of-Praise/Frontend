@@ -44,7 +44,7 @@ const SONGS_DATA = [
     }
 ];
 
-const NewSongs = () => {
+const NewReleases = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
@@ -170,4 +170,4 @@ const NewSongs = () => {
     );
 };
 
-export default NewSongs;
+export default NewReleases;
