@@ -4,7 +4,7 @@ import Footer from './components/layout/Footer';
 import Home from './components/sections/Home';
 import About from './components/sections/About';
 import Features from './components/sections/Features';
-import NewReleases from './components/sections/NewReleases';
+// import NewReleases from './components/sections/NewReleases';
 import Downloads from './components/sections/Downloads';
 import Vision from './components/sections/Vision';
 import ProVersion from './components/sections/ProVersion';
@@ -30,9 +30,9 @@ function App() {
           <ProVersion />
         </div>
 
-        <div>
+        {/* <div>
           <NewReleases />
-        </div>
+        </div> */}
 
         <div>
           <Vision />
