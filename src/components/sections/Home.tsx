@@ -90,7 +90,7 @@ const Home = () => {
                             </div>
 
                             <button className="group relative flex items-center gap-4 bg-slate-900 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-[#1349ec] transition-all duration-300 shadow-2xl shadow-blue-900/20 active:scale-95">
-                                START WORSHIPPING
+                                WATCH FOR MORE
                                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                             </button>
                         </div>

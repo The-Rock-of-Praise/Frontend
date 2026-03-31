@@ -13,6 +13,13 @@ import {
 
 const Features = () => {
 
+    const scrollToPro = () => {
+        const element = document.getElementById('pro');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     // --- Sub-components ---
 
     const FeatureCardSmall = ({ Icon, title, desc }: { Icon: any, title: string, desc: string }) => (
@@ -83,7 +90,10 @@ const Features = () => {
                                 </p>
                             </div>
                             <div className="mt-12">
-                                <button className="bg-slate-900 hover:bg-[#1349ec] text-white px-10 py-5 rounded-[2rem] font-bold transition-all flex items-center group/btn shadow-xl active:scale-95">
+                                <button
+                                    onClick={scrollToPro}
+                                    className="bg-slate-900 hover:bg-[#1349ec] text-white px-10 py-5 rounded-[2rem] font-bold transition-all flex items-center group/btn shadow-xl active:scale-95"
+                                >
                                     Experience Freedom
                                     <ArrowRight size={20} className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
                                 </button>
