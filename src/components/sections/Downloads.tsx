@@ -34,14 +34,14 @@ const REVIEWS = [
         name: "Rachel Khane",
         role: "Ministry Supporter",
         text: "A beautiful initiative that supports worship teams and believers everywhere.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
     },
     {
         id: 5,
         name: "Rachel Kim",
         role: "Believer",
         text: "his will help many people worship God anytime and anywhere in their heart language.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
     }
 ];
 
@@ -167,11 +167,11 @@ const Downloads = () => {
                         </div>
                     </div>
 
-                    <div 
-                        className="relative overflow-hidden w-full py-4 -my-4" 
+                    <div
+                        className="relative overflow-hidden w-full py-4 -my-4"
                         style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
                     >
-                        <motion.div 
+                        <motion.div
                             className="flex gap-8 w-max"
                             animate={{ x: ["0%", "-50%"] }}
                             transition={{ ease: "linear", duration: 50, repeat: Infinity }}
