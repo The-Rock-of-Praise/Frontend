@@ -1,35 +1,46 @@
 import {
-    // Smartphone,
     Apple,
     Play as PlayIcon,
     LayoutGrid,
     Star,
-    ChevronLeft,
-    ChevronRight,
     QrCode,
-    // CheckCircle2
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const REVIEWS = [
     {
         id: 1,
         name: "Sarah Jenkins",
-        role: "Verified Worshipper",
-        text: "The seamless flow of worship music is life-changing! I use it every morning during my commute and it sets the perfect tone for my day.",
+        role: "Worshipper Testimony",
+        text: "This platform helps me focus on worship and connect with God in my daily devotion.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
     },
     {
         id: 2,
         name: "David Miller",
-        role: "Pastor",
-        text: "Finally an app that understands the heart of worship. The curated playlists are incredible and the interface is so beautiful.",
+        role: "Church Member",
+        text: "Having Christian song lyrics in English, Sinhala, and Tamil in one place is a great blessing for the Church.",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
     },
     {
         id: 3,
         name: "Rachel Kim",
-        role: "Community Member",
-        text: "The devotionals have become a staple in my life. It's more than an app, it's a daily companion for my soul.",
+        role: "Christian User",
+        text: "The Rock of Praise makes worship simple, accessible, and spiritually uplifting.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+    },
+    {
+        id: 4,
+        name: "Rachel Khane",
+        role: "Ministry Supporter",
+        text: "A beautiful initiative that supports worship teams and believers everywhere.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+    },
+    {
+        id: 5,
+        name: "Rachel Kim",
+        role: "Believer",
+        text: "his will help many people worship God anytime and anywhere in their heart language.",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
     }
 ];
@@ -154,38 +165,39 @@ const Downloads = () => {
                             <h2 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">Voices of Praise</h2>
                             <p className="text-slate-500 font-medium tracking-wide">Join thousands experiencing spiritual growth.</p>
                         </div>
-                        <div className="flex gap-4">
-                            <button className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-[#1349ec] hover:text-[#1349ec] transition-all bg-white shadow-sm active:scale-90">
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-[#1349ec] hover:text-[#1349ec] transition-all bg-white shadow-sm active:scale-90">
-                                <ChevronRight size={24} />
-                            </button>
-                        </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {REVIEWS.map((review) => (
-                            <div key={review.id} className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-between hover:border-[#1349ec]/30 transition-all group">
-                                <div>
-                                    <div className="flex gap-1 mb-8">
-                                        {[1, 2, 3, 4, 5].map((star) => (
-                                            <Star key={star} size={16} fill="#fbbf24" stroke="none" />
-                                        ))}
-                                    </div>
-                                    <p className="text-slate-600 italic mb-10 leading-relaxed text-lg">
-                                        "{review.text}"
-                                    </p>
-                                </div>
-                                <div className="flex items-center gap-4 pt-6 border-t border-slate-500">
-                                    <img alt={review.name} className="w-12 h-12 rounded-full object-cover ring-4 ring-[#1349ec]/5" src={review.image} />
+                    <div 
+                        className="relative overflow-hidden w-full py-4 -my-4" 
+                        style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+                    >
+                        <motion.div 
+                            className="flex gap-8 w-max"
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{ ease: "linear", duration: 50, repeat: Infinity }}
+                        >
+                            {[...REVIEWS, ...REVIEWS].map((review, idx) => (
+                                <div key={`${review.id}-${idx}`} className="w-[320px] md:w-[400px] shrink-0 bg-white p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-between hover:border-[#1349ec]/30 transition-all group">
                                     <div>
-                                        <h5 className="font-bold text-slate-900 leading-none mb-1">{review.name}</h5>
-                                        <p className="text-xs text-[#1349ec] font-bold uppercase tracking-widest">{review.role}</p>
+                                        <div className="flex gap-1 mb-8">
+                                            {[1, 2, 3, 4, 5].map((star) => (
+                                                <Star key={star} size={16} fill="#fbbf24" stroke="none" />
+                                            ))}
+                                        </div>
+                                        <p className="text-slate-600 italic mb-10 leading-relaxed text-lg">
+                                            "{review.text}"
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-4 pt-6 border-t border-slate-500/20">
+                                        <img alt={review.name} className="w-12 h-12 rounded-full object-cover ring-4 ring-[#1349ec]/5" src={review.image} />
+                                        <div>
+                                            <h5 className="font-bold text-slate-900 leading-none mb-1">{review.name}</h5>
+                                            <p className="text-xs text-[#1349ec] font-bold uppercase tracking-widest">{review.role}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </motion.div>
                     </div>
                 </div>
 
