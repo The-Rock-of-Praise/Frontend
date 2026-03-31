@@ -32,7 +32,7 @@ const REVIEWS = [
     {
         id: 4,
         name: "Rachel Khane",
-        role: "Ministry Supporter",
+        role: "Worship Team Member",
         text: "A beautiful initiative that supports worship teams and believers everywhere.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
     },
