@@ -14,31 +14,31 @@ function App() {
     <Router>
       <div className="flex h-auto min-h-screen w-full flex-col bg-[#f6f6f8] dark:bg-background-dark font-display text-[#0d121b] dark:text-white transition-colors duration-300">
         <Header />
-        <div>
+        <div id="home">
           <Home />
         </div>
 
-        <div >
+        <div id="about">
           <About />
         </div>
 
-        <div >
+        <div id="features">
           <Features />
         </div>
 
-        <div>
+        <div id="proVersion">
           <ProVersion />
         </div>
 
-        {/* <div>
+        {/* <div id="newReleases">
           <NewReleases />
         </div> */}
 
-        <div>
+        <div id="vision">
           <Vision />
         </div>
 
-        <div>
+        <div id="reviews">
           <Downloads />
         </div>
 
@@ -51,7 +51,9 @@ function App() {
           </Routes>
         </main> */}
 
-        <Footer />
+        <div id="contact">
+          <Footer />
+        </div>
       </div>
     </Router>
   );

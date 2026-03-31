@@ -1,16 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-    Star, 
-    Globe2, 
-    Cloud, 
-    Phone, 
-    Wrench, 
-    PlusCircle, 
-    Heart, 
-    ShieldCheck, 
-    CloudOff, 
-    Languages, 
+import Pro1 from '../../assets/Pro1.jpeg';
+import Pro2 from '../../assets/Pro2.jpeg';
+
+import {
+    Star,
+    Globe2,
+    Cloud,
+    Phone,
+    Wrench,
+    PlusCircle,
+    Heart,
+    ShieldCheck,
+    CloudOff,
+    Languages,
     Globe
 } from 'lucide-react';
 
@@ -22,9 +25,9 @@ const ProVersion: React.FC = () => {
             <section className="relative px-8 py-12 md:py-20 overflow-hidden" id="pro">
                 <div className="absolute inset-0 praise-glow -z-10"></div>
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-                    
+
                     {/* Left text content */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -34,15 +37,15 @@ const ProVersion: React.FC = () => {
                             <Star className="w-4 h-4 mr-1.5 fill-sky-500 text-sky-500" />
                             PRO VERSION NOW LIVE
                         </div>
-                        
+
                         <h1 className="font-['Poppins'] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-blue-950 leading-tight">
                             The Rock of Praise – <span className="text-blue-700 drop-shadow-sm">Pro</span>
                         </h1>
-                        
+
                         <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
                             Worship without limits for <span className="font-bold text-blue-600">$2.99/mo</span>. Support a global ministry and the technology connecting us to the Divine.
                         </p>
-                        
+
                         <div className="flex flex-wrap gap-4 pt-2">
                             <button className="px-6 py-3 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-full font-bold shadow-lg shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-0.5 transition-all active:scale-95">
                                 Upgrade for $2.99/mo
@@ -52,9 +55,9 @@ const ProVersion: React.FC = () => {
                             </button>
                         </div>
                     </motion.div>
-                    
+
                     {/* Hero Image / Video visual */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -64,15 +67,15 @@ const ProVersion: React.FC = () => {
                         {/* Adding 'glass-card' equivalent to frame in an ultra-modern way */}
                         <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 transition-transform hover:scale-[1.02] duration-500 border border-white/60 bg-white/30 backdrop-blur-sm p-2">
                             <div className="w-full h-full rounded-2xl overflow-hidden">
-                                <img 
-                                    className="w-full h-full object-cover" 
-                                    alt="Worship leader silhouette" 
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0fI0qbtQ42dQw-FXOR22mKJinnoRSxWIeUMS66VcK0l7xSY3xIQmrh4ku9lx67Q9KDSX5Gz1F3DkbzU64fQK1mro6NLCligj7Qw7l8jCayXeifosKJxfdmod3D_hiw_3HQNi2UFPuwzfJEJXh7fi9yGi-2ffsz1pMlQKITQcZef64HZ7N5fkY1YT5I4VTQICaOqAQbsGdeu5Bmd5RSHmB4F6S8SFeWUAnXAE200v4T-VEB_nbwjAshO2hnN77DCMRVlQlyL5hP3Y" 
+                                <img
+                                    className="w-full h-full object-cover"
+                                    alt="Worship leader silhouette"
+                                    src={Pro1}
                                 />
                             </div>
                         </div>
-                        
-                        <motion.div 
+
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
@@ -90,9 +93,9 @@ const ProVersion: React.FC = () => {
             {/* Bento Grid Info Center */}
             <section className="px-8 py-12 bg-[#f2f4f6]">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
+
                     {/* Mission Card */}
-                    <motion.div 
+                    <motion.div
                         whileHover={{ y: -4 }}
                         className="md:col-span-2 bg-white/80 backdrop-blur-xl border border-slate-200/50 rounded-3xl p-8 flex flex-col justify-center shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-xl hover:border-blue-200"
                     >
@@ -100,7 +103,7 @@ const ProVersion: React.FC = () => {
                         <p className="text-slate-600 leading-relaxed">
                             Our mission is to empower believers across the globe. Your $2.99 monthly contribution directly supports technology development, server hosting, and the expansion of our spiritual reach through English, Sinhala, and Tamil resources.
                         </p>
-                        
+
                         <div className="mt-8 pt-8 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                             <div>
                                 <p className="text-3xl font-bold text-blue-600">3</p>
@@ -122,13 +125,13 @@ const ProVersion: React.FC = () => {
                     </motion.div>
 
                     {/* Why $2.99 List Card */}
-                    <motion.div 
+                    <motion.div
                         whileHover={{ y: -4 }}
                         className="bg-gradient-to-br from-blue-900 to-blue-950 text-white rounded-3xl p-8 shadow-xl shadow-blue-900/20 relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mt-10 -mr-10 pointer-events-none"></div>
                         <h3 className="text-xl font-bold font-['Poppins'] mb-6 relative z-10">Why $2.99?</h3>
-                        
+
                         <ul className="space-y-4 text-sm relative z-10 text-blue-100">
                             <li className="flex items-center gap-3 font-medium">
                                 <Cloud className="w-4 h-4 text-blue-300" /> High-availability hosting
@@ -143,12 +146,12 @@ const ProVersion: React.FC = () => {
                                 <PlusCircle className="w-4 h-4 text-blue-300" /> Future features & chords
                             </li>
                         </ul>
-                        
+
                         <div className="mt-8 aspect-video rounded-xl overflow-hidden shadow-inner relative z-10 border border-white/10">
-                            <img 
-                                className="w-full h-full object-cover grayscale opacity-60 mix-blend-overlay hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
-                                alt="Studio microphone" 
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZu41fzB-Xp7giFJBpZ1C06fi31SkFa9XTU6ptNm_G5U1jjpAUPSeSmYBfYGTklqKJAunkUUdwaiDXEyuJKFwrR_6Bc_EKw7lwX6FIofSYEP_JKbytgRCfQm_Vrx4aZXIDFJ0vpdGs_co2uz-5rTeBkWnqjOdTisWXsYR8_sgnW5wjQKZu6XA3lM46odBFQSe8XBKKKAoxp3FgEZLisBUHq82l0CxgEod_OnGXp8uKuneMIJ1hgp75BmZZ6fc2Zg-wlGY2lVPjU9Y" 
+                            <img
+                                className="w-full h-full object-cover grayscale opacity-60 mix-blend-overlay hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                                alt="Studio microphone"
+                                src={Pro2}
                             />
                         </div>
                     </motion.div>
@@ -204,10 +207,10 @@ const ProVersion: React.FC = () => {
             <section className="px-8 py-16 bg-white relative">
                 {/* Subtle background glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-50/50 rounded-[100%] blur-[120px] pointer-events-none"></div>
-                
+
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid md:grid-cols-4 gap-6">
-                        
+
                         {/* Heart Quote */}
                         <div className="md:col-span-2 bg-slate-50/80 backdrop-blur-md rounded-[2.5rem] p-10 flex flex-col justify-center items-center text-center border border-slate-100 shadow-sm">
                             <Heart className="w-12 h-12 text-blue-500 mb-6 fill-blue-500/20" strokeWidth={1.5} />
@@ -231,7 +234,7 @@ const ProVersion: React.FC = () => {
                                     <p className="text-slate-500 text-xs font-medium">Zero distractions</p>
                                 </div>
                             </motion.div>
-                            
+
                             <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
                                 <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
                                     <CloudOff className="w-6 h-6" />
@@ -241,7 +244,7 @@ const ProVersion: React.FC = () => {
                                     <p className="text-slate-500 text-xs font-medium">Worship anywhere</p>
                                 </div>
                             </motion.div>
-                            
+
                             <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
                                 <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
                                     <Languages className="w-6 h-6" />
@@ -251,7 +254,7 @@ const ProVersion: React.FC = () => {
                                     <p className="text-slate-500 text-xs font-medium">3 Translations</p>
                                 </div>
                             </motion.div>
-                            
+
                             <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
                                 <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
                                     <Globe className="w-6 h-6" />
@@ -272,7 +275,7 @@ const ProVersion: React.FC = () => {
                     {/* Decorative glass orbs */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl -ml-20 -mb-20"></div>
-                    
+
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
                         <div className="max-w-xl">
                             <h2 className="text-3xl md:text-4xl font-bold font-['Poppins'] mb-4 tracking-tight drop-shadow-sm">Ready to Start Your Pro Journey?</h2>

@@ -1,4 +1,5 @@
 import { Play, Apple, ShoppingBag, Languages, WifiOff, Music, ArrowRight, Sparkles } from 'lucide-react';
+import homeBG from '../../assets/Home.jpeg'
 
 const Home = () => {
 
@@ -53,7 +54,7 @@ const Home = () => {
                     <img
                         alt="Worship"
                         className="w-full h-full object-cover opacity-60 scale-105"
-                        src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&q=80&w=2000"
+                        src={homeBG}
                     />
                     {/* Gradient overlay that fades into the light background */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-[#f6f6f8]/40 to-[#f6f6f8]"></div>
