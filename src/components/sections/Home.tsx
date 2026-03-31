@@ -11,9 +11,9 @@ const Home = () => {
     }
 
     const AppBadge = ({ Icon, brand, subText, accentColor }: AppBadgeProps) => (
-        <a href="#" className="group relative">
+        <a href="#" className="group relative w-full sm:w-auto">
             <div className="absolute -inset-0.5 bg-[#1349ec]/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="relative bg-white/70 backdrop-blur-xl border border-white p-3 px-6 rounded-2xl flex items-center gap-4 w-[200px] transition-all duration-300 group-hover:bg-white group-hover:-translate-y-1 shadow-lg shadow-blue-900/5">
+            <div className="relative bg-white/70 backdrop-blur-xl border border-white p-3 px-6 rounded-2xl flex items-center justify-center sm:justify-start gap-4 w-full sm:w-[200px] transition-all duration-300 group-hover:bg-white group-hover:-translate-y-1 shadow-lg shadow-blue-900/5">
                 <div className={`transition-all duration-300 ${accentColor} text-slate-600`}>
                     <Icon size={26} strokeWidth={1.5} />
                 </div>
@@ -27,7 +27,7 @@ const Home = () => {
 
     // --- Premium Glass Feature Card ---
     const FeatureCard = ({ Icon, title, desc }: { Icon: any; title: string; desc: string }) => (
-        <div className="group relative overflow-hidden rounded-[2.5rem] bg-white/60 backdrop-blur-md border border-white p-10 shadow-xl shadow-blue-900/5 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+        <div className="group relative overflow-hidden rounded-[2.5rem] bg-white/60 backdrop-blur-md border border-white p-8 md:p-10 shadow-xl shadow-blue-900/5 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
             <div className="w-16 h-16 bg-[#1349ec]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[#1349ec] group-hover:text-white transition-all duration-500 text-[#1349ec]">
                 <Icon size={32} strokeWidth={1.5} />
             </div>
@@ -46,7 +46,7 @@ const Home = () => {
             <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-sky-400/10 blur-[120px] rounded-full z-0 pointer-events-none"></div>
 
             {/* --- Hero Section --- */}
-            <main className="relative h-screen min-h-[850px] flex flex-col justify-center items-center overflow-hidden">
+            <main className="relative min-h-[100svh] md:min-h-[850px] flex flex-col justify-center items-center overflow-hidden py-20 pb-10 md:py-0">
 
                 {/* Background Image with Improved Visibility Mask */}
                 <div className="absolute inset-0 z-0">
@@ -70,26 +70,26 @@ const Home = () => {
                         </div>
 
                         {/* Mega Headline */}
-                        <h1 className="text-7xl md:text-[100px] font-black tracking-tighter leading-[0.9] mb-12 text-slate-900">
-                            Elevate Your <br />
+                        <h1 className="text-5xl sm:text-7xl lg:text-[100px] font-black tracking-tighter leading-[0.9] mb-8 md:mb-12 text-slate-900 mt-10 md:mt-0">
+                            Elevate Your <br className="hidden sm:block" />
                             <span className="text-[#1349ec]">
                                 Praise Experience
                             </span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-slate-700 font-medium leading-relaxed max-w-2xl mx-auto mb-16">
+                        <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-medium leading-relaxed max-w-2xl mx-auto mb-10 md:mb-16">
                             Join thousands using the ultimate lyrics companion for <span className="text-slate-900 font-bold border-b-4 border-[#1349ec]/20">Sinhala, Tamil and English</span> worship.
                         </p>
 
                         {/* CTA Row */}
                         <div className="flex flex-col items-center gap-14">
-                            <div className="flex flex-wrap justify-center items-center gap-4">
+                            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 md:gap-4 w-full">
                                 <AppBadge Icon={Play} brand="Google Play" subText="Get it on" accentColor="group-hover:text-green-600" />
                                 <AppBadge Icon={Apple} brand="App Store" subText="Download on" accentColor="group-hover:text-blue-600" />
                                 <AppBadge Icon={ShoppingBag} brand="AppGallery" subText="Explore on" accentColor="group-hover:text-red-600" />
                             </div>
 
-                            <button className="group relative flex items-center gap-4 bg-slate-900 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-[#1349ec] transition-all duration-300 shadow-2xl shadow-blue-900/20 active:scale-95">
+                            <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-slate-900 text-white px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black text-lg md:text-xl hover:bg-[#1349ec] transition-all duration-300 shadow-xl shadow-blue-900/20 active:scale-95">
                                 WATCH FOR MORE
                                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                             </button>

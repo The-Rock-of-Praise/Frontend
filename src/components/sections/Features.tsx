@@ -62,10 +62,10 @@ const Features = () => {
                     <Sparkles size={14} className="mr-2 animate-pulse" />
                     Built for the next-gen worship
                 </div>
-                <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter text-slate-900">
+                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-6 md:mb-8 tracking-tighter text-slate-900">
                     Beyond <span className="text-[#1349ec]">Software.</span>
                 </h1>
-                <p className="max-w-xl mx-auto text-xl text-slate-500 font-medium leading-relaxed">
+                <p className="max-w-xl mx-auto text-lg md:text-xl text-slate-500 font-medium leading-relaxed">
                     A suite of powerful tools designed to keep your focus on the divine, not the display.
                 </p>
             </header>
@@ -75,24 +75,24 @@ const Features = () => {
                 <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6">
 
                     {/* Feature: Offline Access (Big Hero Card) */}
-                    <div className="md:col-span-6 lg:col-span-8 relative group overflow-hidden rounded-[3rem] bg-white border border-white shadow-2xl shadow-blue-900/5 p-12 transition-all duration-700">
+                    <div className="md:col-span-6 lg:col-span-8 relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-white border border-white shadow-2xl shadow-blue-900/5 p-8 md:p-12 transition-all duration-700">
                         <div className="relative z-10 flex flex-col h-full">
                             <div className="flex-1">
-                                <div className="inline-flex items-center gap-2 text-[#1349ec] font-bold text-sm uppercase tracking-widest mb-6">
+                                <div className="inline-flex items-center gap-2 text-[#1349ec] font-bold text-xs md:text-sm uppercase tracking-widest mb-6">
                                     <div className="w-2 h-2 rounded-full bg-[#1349ec]"></div>
                                     Offline Mode
                                 </div>
-                                <h3 className="text-5xl font-black mb-6 text-slate-900 tracking-tighter leading-none">
-                                    Worship without <br /> limits.
+                                <h3 className="text-4xl sm:text-5xl font-black mb-6 text-slate-900 tracking-tighter leading-none">
+                                    Worship without <br className="hidden sm:block" /> limits.
                                 </h3>
-                                <p className="text-slate-500 text-lg leading-relaxed max-w-md font-medium">
+                                <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-md font-medium">
                                     No Wi-Fi? No problem. Access your entire library, chords, and media offline. Perfect for mission trips or remote congregations.
                                 </p>
                             </div>
-                            <div className="mt-12">
+                            <div className="mt-8 md:mt-12">
                                 <button
                                     onClick={scrollToPro}
-                                    className="bg-slate-900 hover:bg-[#1349ec] text-white px-10 py-5 rounded-[2rem] font-bold transition-all flex items-center group/btn shadow-xl active:scale-95"
+                                    className="bg-slate-900 hover:bg-[#1349ec] text-white px-8 py-4 md:px-10 md:py-5 rounded-full md:rounded-[2rem] font-bold transition-all flex justify-center items-center w-full sm:w-auto group/btn shadow-xl active:scale-95"
                                 >
                                     Experience Freedom
                                     <ArrowRight size={20} className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
@@ -105,11 +105,11 @@ const Features = () => {
                     </div>
 
                     {/* Feature: Multilingual */}
-                    <div className="md:col-span-6 lg:col-span-4 group relative overflow-hidden rounded-[3rem] bg-[#1349ec] p-12 flex flex-col justify-between text-white shadow-2xl shadow-blue-600/30">
+                    <div className="md:col-span-6 lg:col-span-4 group relative overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-[#1349ec] p-8 md:p-12 flex flex-col justify-between text-white shadow-2xl shadow-blue-600/30">
                         <div className="relative z-10">
-                            <Languages size={50} strokeWidth={1.5} className="mb-8 text-blue-200" />
+                            <Languages size={40} className="md:w-[50px] md:h-[50px] mb-6 md:mb-8 text-blue-200" strokeWidth={1.5} />
                             <h3 className="text-3xl font-black mb-4 tracking-tight">Speak your heart's language.</h3>
-                            <p className="text-blue-100/80 text-lg leading-relaxed font-medium">
+                            <p className="text-blue-100/80 text-base md:text-lg leading-relaxed font-medium">
                                 Full support for English, Sinhala, and Tamil characters with custom rendering.
                             </p>
                         </div>
@@ -131,18 +131,18 @@ const Features = () => {
                     </div>
 
                     {/* App Stores CTA */}
-                    <div className="md:col-span-6 lg:col-span-12 bg-white rounded-[3rem] p-4 border border-white shadow-xl shadow-blue-900/5 mt-6">
-                        <div className="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="md:col-span-6 lg:col-span-12 bg-white rounded-[2.5rem] md:rounded-[3rem] p-3 md:p-4 border border-white shadow-xl shadow-blue-900/5 mt-6">
+                        <div className="bg-slate-50 rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8">
                             <div>
-                                <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-2">Ready to transform your service?</h3>
-                                <p className="text-slate-500 font-medium">Get the app now on your favorite store.</p>
+                                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-2">Ready to transform your service?</h3>
+                                <p className="text-slate-500 font-medium text-sm md:text-base">Get the app now on your favorite store.</p>
                             </div>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <button className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-[#1349ec] hover:text-white hover:border-[#1349ec] transition-all shadow-sm active:scale-95">
+                            <div className="flex flex-col sm:flex-row justify-center w-full md:w-auto gap-3 sm:gap-4">
+                                <button className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#1349ec] hover:text-white hover:border-[#1349ec] transition-all shadow-sm active:scale-95">
                                     <Apple size={22} fill="currentColor" />
                                     <span>App Store</span>
                                 </button>
-                                <button className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-[#1349ec] hover:text-white hover:border-[#1349ec] transition-all shadow-sm active:scale-95">
+                                <button className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#1349ec] hover:text-white hover:border-[#1349ec] transition-all shadow-sm active:scale-95">
                                     <Play size={22} fill="currentColor" />
                                     <span>Play Store</span>
                                 </button>
@@ -154,7 +154,7 @@ const Features = () => {
 
             {/* --- Stats Footer --- */}
             <section className="max-w-7xl mx-auto px-6 mb-20">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-white/40 backdrop-blur-sm rounded-[3rem] p-4 border border-white/50">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white/40 backdrop-blur-sm rounded-3xl md:rounded-[3rem] p-4 border border-white/50">
                     <StatItem value="5k+" label="Songs Library" />
                     <StatItem value="3" label="Languages" />
                     <StatItem value="100%" label="Offline Ready" />
