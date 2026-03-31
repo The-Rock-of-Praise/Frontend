@@ -1,210 +1,297 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    Zap, 
-    Music, 
-    Globe, 
-    Shield, 
     Star, 
-    PlayCircle, 
-    Download, 
-    CheckCircle2, 
-    Gem,
-    TrendingUp
+    Globe2, 
+    Cloud, 
+    Phone, 
+    Wrench, 
+    PlusCircle, 
+    Heart, 
+    ShieldCheck, 
+    CloudOff, 
+    Languages, 
+    Globe
 } from 'lucide-react';
 
 const ProVersion: React.FC = () => {
-    
-    // Feature cards with premium styling
-    const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-        <motion.div 
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-white/60 backdrop-blur-md border border-white p-8 shadow-xl shadow-blue-900/5 transition-all duration-500 hover:shadow-2xl"
-        >
-            <div className="w-14 h-14 bg-[#1349ec]/10 rounded-2xl flex items-center justify-center mb-6 text-[#1349ec] group-hover:bg-[#1349ec] group-hover:text-white transition-all duration-500">
-                <Icon size={28} strokeWidth={1.5} />
-            </div>
-            <h3 className="text-[13px] font-black mb-3 text-slate-900 tracking-[0.15em] uppercase">{title}</h3>
-            <p className="text-slate-600 leading-relaxed font-medium text-sm">{description}</p>
-            
-            {/* Ambient indicator */}
-            <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-[#1349ec]/5 rounded-full blur-xl group-hover:bg-[#1349ec]/20 transition-all duration-500"></div>
-        </motion.div>
-    );
-
-    // Pricing card sub-component
-    const PricingCard = ({ 
-        title, 
-        price, 
-        duration, 
-        features, 
-        highlighted = false, 
-        savings = "" 
-    }: { 
-        title: string, 
-        price: string, 
-        duration: string, 
-        features: string[], 
-        highlighted?: boolean,
-        savings?: string
-    }) => (
-        <motion.div 
-            whileHover={{ y: -10 }}
-            className={`relative p-10 rounded-[3rem] transition-all duration-500 ${
-                highlighted 
-                ? 'bg-[#1349ec] text-white shadow-2xl shadow-blue-600/30 ring-4 ring-blue-100 dark:ring-blue-900/20' 
-                : 'bg-white border border-slate-100 text-slate-900 shadow-xl shadow-blue-900/5 hover:border-[#1349ec]/20'
-            }`}
-        >
-            {highlighted && (
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-900 text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
-                    Most Popular
-                </div>
-            )}
-            
-            <div className="mb-10 text-center">
-                <p className={`text-[12px] font-black uppercase tracking-[0.25em] mb-4 ${highlighted ? 'text-blue-200' : 'text-slate-400'}`}>
-                    {title}
-                </p>
-                <div className="flex items-center justify-center gap-1">
-                    <span className="text-5xl font-black tracking-tight">{price}</span>
-                    <span className={`text-lg font-bold ${highlighted ? 'text-blue-200' : 'text-slate-400'}`}>/{duration}</span>
-                </div>
-                {savings && (
-                    <div className="mt-3 inline-block bg-green-500/10 text-green-500 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full">
-                        {savings}
-                    </div>
-                )}
-            </div>
-
-            <ul className="space-y-5 mb-12">
-                {features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-4">
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center bg-current opacity-10 ${highlighted ? 'text-white' : 'text-[#1349ec]'}`}>
-                            <CheckCircle2 size={14} className="opacity-100" />
-                        </div>
-                        <span className={`text-sm font-bold ${highlighted ? 'text-blue-100' : 'text-slate-600'}`}>
-                            {feature}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-
-            <button className={`w-full py-5 rounded-2xl font-black tracking-tight text-lg transition-all duration-300 active:scale-95 ${
-                highlighted 
-                ? 'bg-white text-[#1349ec] hover:shadow-xl' 
-                : 'bg-slate-900 text-white hover:bg-[#1349ec]'
-            }`}>
-                Start 7-Day Free Trial
-            </button>
-        </motion.div>
-    );
-
     return (
-        <section id="proVersion" className="relative py-32 overflow-hidden bg-[#f6f6f8] font-['Poppins']">
-            
-            {/* --- Decorative Elements (Consistent with Home/Features) --- */}
-            <div className="absolute top-[-5%] left-[-10%] w-[400px] h-[400px] bg-[#1349ec]/5 blur-[100px] rounded-full pointer-events-none"></div>
-            <div className="absolute bottom-[-5%] right-[-10%] w-[400px] h-[400px] bg-blue-400/5 blur-[100px] rounded-full pointer-events-none"></div>
-
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                
-                {/* Header */}
-                <div className="text-center mb-24">
+        // Adjusted the main container to use standard Tailwind colors mapped from the custom scheme
+        <main className="pt-20 bg-slate-50 font-[Inter] text-slate-900 selection:bg-sky-200 selection:text-sky-900">
+            {/* Hero Section */}
+            <section className="relative px-8 py-12 md:py-20 overflow-hidden" id="pro">
+                <div className="absolute inset-0 praise-glow -z-10"></div>
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                    
+                    {/* Left text content */}
                     <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-3 bg-white/80 border border-white px-5 py-2 rounded-full mb-8 shadow-sm backdrop-blur-sm"
+                        className="space-y-6"
                     >
-                        <Gem size={18} className="text-[#1349ec]" />
-                        <span className="text-[11px] font-black tracking-[0.25em] uppercase text-slate-600">The Rock of Praise Pro</span>
+                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-bold tracking-wide shadow-sm border border-sky-200/50">
+                            <Star className="w-4 h-4 mr-1.5 fill-sky-500 text-sky-500" />
+                            PRO VERSION NOW LIVE
+                        </div>
+                        
+                        <h1 className="font-['Poppins'] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-blue-950 leading-tight">
+                            The Rock of Praise – <span className="text-blue-700 drop-shadow-sm">Pro</span>
+                        </h1>
+                        
+                        <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
+                            Worship without limits for <span className="font-bold text-blue-600">$2.99/mo</span>. Support a global ministry and the technology connecting us to the Divine.
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-4 pt-2">
+                            <button className="px-6 py-3 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-full font-bold shadow-lg shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-0.5 transition-all active:scale-95">
+                                Upgrade for $2.99/mo
+                            </button>
+                            <button className="px-6 py-3 bg-white/70 backdrop-blur-xl border border-slate-200 rounded-full font-bold text-blue-700 hover:bg-white hover:shadow-md transition-all active:scale-95">
+                                Learn More
+                            </button>
+                        </div>
                     </motion.div>
                     
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8"
-                    >
-                        Unlock the <span className="text-[#1349ec]">Ultimate</span> <br />
-                        Worship Journey.
-                    </motion.h2>
-                    
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                    {/* Hero Image / Video visual */}
+                    <motion.div 
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed"
+                        className="relative"
                     >
-                        Elevate your praise experience with zero limits. Designed for worship leaders, teams, and those who seek the deepest connection.
-                    </motion.p>
-                </div>
-
-                {/* --- Grid Phase 1: Features --- */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
-                    <FeatureCard icon={Zap} title="Ad-Free" description="Zero interruptions. Stay focused on the divine atmosphere without any advertisements." />
-                    <FeatureCard icon={Download} title="Offline Library" description="Save your entire spiritual catalog for worship anywhere, even without internet." />
-                    <FeatureCard icon={Music} title="Ultra Quality" description="Crystal clear high-fidelity audio that captures every nuances of the praise." />
-                    <FeatureCard icon={Globe} title="Multi-Lingual" description="Full premium access to English, Yoruba, and Igbo translations for every song." />
-                    <FeatureCard icon={Star} title="Priority Content" description="Be the first to access new releases and exclusive live worship recordings." />
-                    <FeatureCard icon={TrendingUp} title="Advanced Tools" description="Professional-grade setlist management and customized AI suggestions." />
-                    <FeatureCard icon={PlayCircle} title="HD Performances" description="Breathtaking high-definition video performances and live sanctuary recordings." />
-                    <FeatureCard icon={Shield} title="Premium Support" description="Dedicated 24/7 concierge support for your entire worship team needs." />
-                </div>
-
-                {/* --- Grid Phase 2: Pricing --- */}
-                <div className="relative">
-                    {/* Background blob for the pricing section */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-[#1349ec]/5 blur-[120px] -z-10 rounded-full"></div>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto items-center">
+                        {/* Adding 'glass-card' equivalent to frame in an ultra-modern way */}
+                        <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 transition-transform hover:scale-[1.02] duration-500 border border-white/60 bg-white/30 backdrop-blur-sm p-2">
+                            <div className="w-full h-full rounded-2xl overflow-hidden">
+                                <img 
+                                    className="w-full h-full object-cover" 
+                                    alt="Worship leader silhouette" 
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0fI0qbtQ42dQw-FXOR22mKJinnoRSxWIeUMS66VcK0l7xSY3xIQmrh4ku9lx67Q9KDSX5Gz1F3DkbzU64fQK1mro6NLCligj7Qw7l8jCayXeifosKJxfdmod3D_hiw_3HQNi2UFPuwzfJEJXh7fi9yGi-2ffsz1pMlQKITQcZef64HZ7N5fkY1YT5I4VTQICaOqAQbsGdeu5Bmd5RSHmB4F6S8SFeWUAnXAE200v4T-VEB_nbwjAshO2hnN77DCMRVlQlyL5hP3Y" 
+                                />
+                            </div>
+                        </div>
                         
-                        {/* Monthly Card */}
-                        <PricingCard 
-                            title="Monthly Praise"
-                            price="$4.99"
-                            duration="month"
-                            features={[
-                                "All Premium Features",
-                                "Ad-Free Worship",
-                                "HD Video Access",
-                                "Cancel Anytime"
-                            ]}
-                        />
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                            className="absolute -bottom-4 -left-4 glass-card px-4 py-3 rounded-2xl shadow-xl border border-white/60 flex items-center gap-3"
+                        >
+                            <div className="p-1.5 bg-sky-100 rounded-xl shadow-inner">
+                                <Globe2 className="w-5 h-5 text-sky-700" />
+                            </div>
+                            <span className="text-sm font-bold text-slate-800">Multilingual Support</span>
+                        </motion.div>
+                    </motion.div>
+                </div>
+            </section>
 
-                        {/* Yearly Card (Highlighted) */}
-                        <PricingCard 
-                            title="Annual Devotion"
-                            price="$49.99"
-                            duration="year"
-                            highlighted={true}
-                            savings="Save 17% Yearly"
-                            features={[
-                                "Everything in Monthly",
-                                "Advanced Team Sync",
-                                "Early Access Content",
-                                "2 Months Free Included"
-                            ]}
-                        />
+            {/* Bento Grid Info Center */}
+            <section className="px-8 py-12 bg-[#f2f4f6]">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    {/* Mission Card */}
+                    <motion.div 
+                        whileHover={{ y: -4 }}
+                        className="md:col-span-2 bg-white/80 backdrop-blur-xl border border-slate-200/50 rounded-3xl p-8 flex flex-col justify-center shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-xl hover:border-blue-200"
+                    >
+                        <h2 className="text-2xl font-bold font-['Poppins'] text-blue-700 mb-4">A Ministry-Focused Platform</h2>
+                        <p className="text-slate-600 leading-relaxed">
+                            Our mission is to empower believers across the globe. Your $2.99 monthly contribution directly supports technology development, server hosting, and the expansion of our spiritual reach through English, Sinhala, and Tamil resources.
+                        </p>
+                        
+                        <div className="mt-8 pt-8 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div>
+                                <p className="text-3xl font-bold text-blue-600">3</p>
+                                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mt-1">Languages</p>
+                            </div>
+                            <div>
+                                <p className="text-3xl font-bold text-blue-600">∞</p>
+                                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mt-1">Access</p>
+                            </div>
+                            <div>
+                                <p className="text-3xl font-bold text-blue-600">0</p>
+                                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mt-1">Ads</p>
+                            </div>
+                            <div>
+                                <p className="text-3xl font-bold text-blue-600">24/7</p>
+                                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mt-1">Offline</p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Why $2.99 List Card */}
+                    <motion.div 
+                        whileHover={{ y: -4 }}
+                        className="bg-gradient-to-br from-blue-900 to-blue-950 text-white rounded-3xl p-8 shadow-xl shadow-blue-900/20 relative overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mt-10 -mr-10 pointer-events-none"></div>
+                        <h3 className="text-xl font-bold font-['Poppins'] mb-6 relative z-10">Why $2.99?</h3>
+                        
+                        <ul className="space-y-4 text-sm relative z-10 text-blue-100">
+                            <li className="flex items-center gap-3 font-medium">
+                                <Cloud className="w-4 h-4 text-blue-300" /> High-availability hosting
+                            </li>
+                            <li className="flex items-center gap-3 font-medium">
+                                <Phone className="w-4 h-4 text-blue-300" /> App Store distribution
+                            </li>
+                            <li className="flex items-center gap-3 font-medium">
+                                <Wrench className="w-4 h-4 text-blue-300" /> Technical maintenance
+                            </li>
+                            <li className="flex items-center gap-3 font-medium">
+                                <PlusCircle className="w-4 h-4 text-blue-300" /> Future features & chords
+                            </li>
+                        </ul>
+                        
+                        <div className="mt-8 aspect-video rounded-xl overflow-hidden shadow-inner relative z-10 border border-white/10">
+                            <img 
+                                className="w-full h-full object-cover grayscale opacity-60 mix-blend-overlay hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
+                                alt="Studio microphone" 
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZu41fzB-Xp7giFJBpZ1C06fi31SkFa9XTU6ptNm_G5U1jjpAUPSeSmYBfYGTklqKJAunkUUdwaiDXEyuJKFwrR_6Bc_EKw7lwX6FIofSYEP_JKbytgRCfQm_Vrx4aZXIDFJ0vpdGs_co2uz-5rTeBkWnqjOdTisWXsYR8_sgnW5wjQKZu6XA3lM46odBFQSe8XBKKKAoxp3FgEZLisBUHq82l0CxgEod_OnGXp8uKuneMIJ1hgp75BmZZ6fc2Zg-wlGY2lVPjU9Y" 
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* Comparison Table */}
+                    <div className="md:col-span-3 bg-white/80 backdrop-blur-xl border border-slate-200/50 rounded-3xl overflow-hidden shadow-lg shadow-slate-200/40">
+                        <div className="px-8 py-5 bg-slate-50/80 border-b border-slate-100 flex justify-between items-center backdrop-blur-sm">
+                            <h3 className="font-bold text-xs uppercase tracking-[0.2em] text-slate-500">Compare Experience</h3>
+                            <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 pb-1.5 rounded-full border border-blue-100">Elevate Your Journey</span>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-sm">
+                                <thead>
+                                    <tr className="text-slate-400 border-b border-slate-50">
+                                        <th className="px-8 py-4 font-medium uppercase tracking-wider text-[11px]">Feature</th>
+                                        <th className="px-8 py-4 font-medium uppercase tracking-wider text-[11px]">Free</th>
+                                        <th className="px-8 py-4 font-black uppercase tracking-wider text-[11px] text-blue-600">Pro ($2.99)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-50">
+                                    <tr className="hover:bg-slate-50/50 transition-colors group">
+                                        <td className="px-8 py-4 font-medium text-slate-700">Christian Worship Lyrics</td>
+                                        <td className="px-8 py-4 text-slate-400">Available</td>
+                                        <td className="px-8 py-4 font-bold text-blue-600 group-hover:text-blue-700 transition-colors">Unlimited Access</td>
+                                    </tr>
+                                    <tr className="bg-slate-50/30 hover:bg-slate-50/80 transition-colors group">
+                                        <td className="px-8 py-4 font-medium text-slate-700">Internet Required</td>
+                                        <td className="px-8 py-4 text-slate-400">Yes</td>
+                                        <td className="px-8 py-4 font-bold text-blue-600 group-hover:text-blue-700 transition-colors">No (Offline Ready)</td>
+                                    </tr>
+                                    <tr className="hover:bg-slate-50/50 transition-colors group">
+                                        <td className="px-8 py-4 font-medium text-slate-700">Advertisements</td>
+                                        <td className="px-8 py-4 text-slate-400 relative">
+                                            Yes
+                                            <div className="absolute top-1/2 left-4 w-12 h-0.5 bg-slate-300 -translate-y-1/2 rounded mix-blend-multiply"></div>
+                                        </td>
+                                        <td className="px-8 py-4 font-bold text-blue-600 group-hover:text-blue-700 transition-colors">Zero Ads</td>
+                                    </tr>
+                                    <tr className="bg-slate-50/30 hover:bg-slate-50/80 transition-colors group">
+                                        <td className="px-8 py-4 font-medium text-slate-700">Performance & UI</td>
+                                        <td className="px-8 py-4 text-slate-400">Standard</td>
+                                        <td className="px-8 py-4 font-bold text-blue-600 group-hover:text-blue-700 transition-colors">Premium Glassmorphism</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Features & Mission Summary */}
+            <section className="px-8 py-16 bg-white relative">
+                {/* Subtle background glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-50/50 rounded-[100%] blur-[120px] pointer-events-none"></div>
+                
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="grid md:grid-cols-4 gap-6">
+                        
+                        {/* Heart Quote */}
+                        <div className="md:col-span-2 bg-slate-50/80 backdrop-blur-md rounded-[2.5rem] p-10 flex flex-col justify-center items-center text-center border border-slate-100 shadow-sm">
+                            <Heart className="w-12 h-12 text-blue-500 mb-6 fill-blue-500/20" strokeWidth={1.5} />
+                            <blockquote className="text-2xl font-['Plus_Jakarta_Sans'] font-medium italic text-slate-800 leading-tight mb-6">
+                                "Freely you have received; freely give."
+                            </blockquote>
+                            <cite className="block text-blue-600 text-sm font-bold uppercase tracking-widest not-italic">— Matthew 10:8</cite>
+                            <p className="mt-6 text-sm text-slate-500 max-w-sm font-medium leading-relaxed">
+                                Join thousands in a mission where everyone, regardless of language, can encounter the Rock of Salvation.
+                            </p>
+                        </div>
+
+                        {/* Feature Icons (Small Grid) */}
+                        <div className="md:col-span-2 grid grid-cols-2 gap-4">
+                            <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
+                                <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
+                                    <ShieldCheck className="w-6 h-6" />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="font-bold text-slate-900 mb-1">Ad-Free</p>
+                                    <p className="text-slate-500 text-xs font-medium">Zero distractions</p>
+                                </div>
+                            </motion.div>
+                            
+                            <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
+                                <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
+                                    <CloudOff className="w-6 h-6" />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="font-bold text-slate-900 mb-1">Offline</p>
+                                    <p className="text-slate-500 text-xs font-medium">Worship anywhere</p>
+                                </div>
+                            </motion.div>
+                            
+                            <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
+                                <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
+                                    <Languages className="w-6 h-6" />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="font-bold text-slate-900 mb-1">Multilingual</p>
+                                    <p className="text-slate-500 text-xs font-medium">3 Translations</p>
+                                </div>
+                            </motion.div>
+                            
+                            <motion.div whileHover={{ y: -2 }} className="bg-slate-50/80 backdrop-blur-sm border border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-start gap-4 hover:shadow-md hover:border-blue-100 transition-all">
+                                <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
+                                    <Globe className="w-6 h-6" />
+                                </div>
+                                <div className="text-sm">
+                                    <p className="font-bold text-slate-900 mb-1">Global Mission</p>
+                                    <p className="text-slate-500 text-xs font-medium">Be a partner</p>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/* Footer Section */}
-                <div className="mt-24 text-center">
-                    <motion.p 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="text-slate-400 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3"
-                    >
-                        <Shield size={14} className="text-green-500" />
-                        Secure Payment via PayHere • No Hidden Fees • Cancel Anytime
-                    </motion.p>
+            {/* Final CTA (Sleeker) */}
+            <section className="px-8 pb-16 pt-4 bg-white relative z-10">
+                <div className="max-w-7xl mx-auto p-10 md:p-14 rounded-[3rem] bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white text-center relative overflow-hidden shadow-2xl shadow-blue-900/30">
+                    {/* Decorative glass orbs */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl -ml-20 -mb-20"></div>
+                    
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
+                        <div className="max-w-xl">
+                            <h2 className="text-3xl md:text-4xl font-bold font-['Poppins'] mb-4 tracking-tight drop-shadow-sm">Ready to Start Your Pro Journey?</h2>
+                            <p className="text-blue-100/90 text-lg font-medium leading-relaxed">
+                                Join worshipers around the world. Secure, simple, and kingdom-focused.
+                            </p>
+                        </div>
+                        <div className="shrink-0 flex flex-col items-center">
+                            <button className="px-10 py-5 bg-white text-blue-700 rounded-full font-black text-lg hover:scale-105 hover:shadow-xl hover:shadow-white/20 transition-all duration-300 active:scale-95 shadow-lg border border-white/50 backdrop-blur-sm">
+                                Get Pro – $2.99/mo
+                            </button>
+                            <p className="mt-4 text-xs font-medium text-blue-200/60 uppercase tracking-widest flex items-center gap-2">
+                                <ShieldCheck className="w-4 h-4" /> Cancel anytime. Glory to God.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     );
 };
 
