@@ -155,7 +155,7 @@ const Features = () => {
             {/* --- Stats Footer --- */}
             <section className="max-w-7xl mx-auto px-6 mb-20">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-white/40 backdrop-blur-sm rounded-[3rem] p-4 border border-white/50">
-                    <StatItem value="50k+" label="Songs Library" />
+                    <StatItem value="5k+" label="Songs Library" />
                     <StatItem value="3" label="Languages" />
                     <StatItem value="100%" label="Offline Ready" />
                     <StatItem value="24/7" label="Global Support" />
