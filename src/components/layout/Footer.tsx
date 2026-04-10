@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.jpg';
 
 const Footer = () => {
@@ -45,9 +46,9 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold text-white">Support</h4>
                         <ul className="flex flex-col gap-4">
                             <FooterLink href="#contact">Contact Us</FooterLink>
-                            <FooterLink href="#privacy">Privacy Policy</FooterLink>
+                            <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
                             <FooterLink href="#terms">Terms of Service</FooterLink>
-                            <FooterLink href="#faq">FAQ</FooterLink>
+                            <FooterLink to="/faq">FAQ</FooterLink>
                         </ul>
                     </div>
 
@@ -85,17 +86,29 @@ const Footer = () => {
 };
 
 // Helper component for Links with underline animation
-const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <li>
-        <a
-            href={href}
-            className="text-blue-100/60 hover:text-white transition-colors text-sm relative group w-fit"
-        >
+const FooterLink = ({ href, to, children }: { href?: string; to?: string; children: React.ReactNode }) => {
+    const className = "text-blue-100/60 hover:text-white transition-colors text-sm relative group w-fit";
+    const content = (
+        <>
             {children}
             <span className="absolute bottom-[-2px] left-0 w-0 h-[2px] bg-[#1349ec] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-    </li>
-);
+        </>
+    );
+
+    return (
+        <li>
+            {to ? (
+                <Link to={to} className={className}>
+                    {content}
+                </Link>
+            ) : (
+                <a href={href} className={className}>
+                    {content}
+                </a>
+            )}
+        </li>
+    );
+};
 
 // Helper component for Social Icons
 const SocialIcon = ({ d }: { d: string }) => (
