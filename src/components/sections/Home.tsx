@@ -1,7 +1,26 @@
+import { useState, useEffect } from 'react';
 import { Play, Apple, ShoppingBag, Languages, WifiOff, Music, ArrowRight, Sparkles } from 'lucide-react';
-import homeBG from '../../assets/Home.jpeg'
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Import all home background images
+import home1 from '../../assets/home1.jpeg';
+import home2 from '../../assets/home2.jpeg';
+import home3 from '../../assets/home3.jpeg';
+import home4 from '../../assets/home4.jpeg';
+import home5 from '../../assets/home5.jpeg';
 
 const Home = () => {
+    const images = [home1, home2, home3, home4, home5];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Auto-slide logic
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(timer);
+    }, [images.length]);
 
     // --- Premium Glass AppBadge ---
     interface AppBadgeProps {
@@ -49,13 +68,20 @@ const Home = () => {
             {/* --- Hero Section --- */}
             <main className="relative min-h-[100svh] md:min-h-[850px] flex flex-col justify-center items-center overflow-hidden py-20 pb-10 md:py-0">
 
-                {/* Background Image with Improved Visibility Mask */}
+                {/* Animated Background Slider */}
                 <div className="absolute inset-0 z-0">
-                    <img
-                        alt="Worship"
-                        className="w-full h-full object-cover opacity-60 scale-105"
-                        src={homeBG}
-                    />
+                    <AnimatePresence mode='wait'>
+                        <motion.img
+                            key={currentIndex}
+                            src={images[currentIndex]}
+                            initial={{ opacity: 0, scale: 1.1 }}
+                            animate={{ opacity: 0.6, scale: 1.05 }}
+                            exit={{ opacity: 0, scale: 1 }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            alt="Worship Background"
+                        />
+                    </AnimatePresence>
                     {/* Gradient overlay that fades into the light background */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-[#f6f6f8]/40 to-[#f6f6f8]"></div>
                 </div>
