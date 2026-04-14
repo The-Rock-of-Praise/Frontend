@@ -12,6 +12,15 @@
   .praise-glow {
     background: radial-gradient(circle at center, rgba(137, 208, 237, 0.1) 0%, rgba(247, 249, 251, 0) 70%);
   }
+
+  @keyframes shimmer {
+    from { transform: translateX(-100%) skewX(-12deg); }
+    to { transform: translateX(200%) skewX(-12deg); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
 }
 
 /* Material Symbols configuration */

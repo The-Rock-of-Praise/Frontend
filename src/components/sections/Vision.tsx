@@ -73,7 +73,7 @@ const Vision = () => {
                         {/* Switchable Content */}
                         <div className="flex-1 overflow-y-auto px-8 md:px-16 py-12 custom-scrollbar">
                             <div className="max-w-2xl mx-auto">
-                                
+
                                 {activeTab === 'Behind the Vision' && (
                                     <div className="space-y-8 animate-in fade-in duration-700">
                                         <header>
@@ -92,7 +92,7 @@ const Vision = () => {
                                             <p>
                                                 Today, I am humbled and excited to present <span className="text-slate-900 font-bold">The Rock of Praise</span> — a renewed, multilingual worship lyrics app with 5,000+ songs in English, Sinhala, and Tamil. It has been beautifully designed to be user-friendly, spiritually enriching, and accessible across all devices, including smartphones, tablets, iPhones, and iPads. The app is available on the Google Play Store, Apple App Store, and Huawei AppGallery.
                                             </p>
-                                            
+
                                             <blockquote className="relative border-l-4 border-[#1349ec] pl-8 py-6 bg-blue-50/50 rounded-r-3xl my-8">
                                                 <Quote className="absolute top-2 left-2 text-[#1349ec]/10" size={60} />
                                                 <p className="font-serif italic text-xl text-slate-700 leading-relaxed relative z-10">
@@ -194,7 +194,7 @@ const Vision = () => {
                                         </header>
                                         <div className="space-y-6">
                                             <p className="text-slate-600 leading-loose text-[16px]">
-                                                This app was born from a simple observation: <span className="text-slate-900 font-semibold italic">worship should be accessible to everyone</span>. 
+                                                This app was born from a simple observation: <span className="text-slate-900 font-semibold italic">worship should be accessible to everyone</span>.
                                             </p>
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
@@ -247,4 +247,4 @@ const Vision = () => {
 };
 
 export default Vision;
-
+
