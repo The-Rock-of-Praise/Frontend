@@ -82,24 +82,26 @@ const Header: React.FC = () => {
 
     return (
         <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className="fixed top-0 left-0 right-0 z-[100] pointer-events-none"
         >
             {/* Scroll Progress Bar */}
             <motion.div
-                className="absolute top-0 left-0 right-0 h-[2px] bg-[#0048ad] origin-left z-[110]"
+                className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0048ad] to-blue-400 origin-left z-[110]"
                 style={{ scaleX }}
             />
 
-            <div className="w-full flex justify-center py-2 lg:py-4">
+            <div className={`w-full flex justify-center transition-all duration-500 ${scrolled ? 'py-4' : 'py-6'}`}>
                 <motion.div
                     layout
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className={`
-                        pointer-events-auto flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
+                        pointer-events-auto flex items-center justify-between transition-all duration-500
                         ${scrolled
-                            ? 'w-[92%] max-w-6xl bg-white/70 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[2.5rem] px-6 lg:px-10 py-2'
-                            : 'w-full max-w-7xl bg-transparent px-8 lg:px-20 py-1'
+                            ? 'w-[92%] max-w-6xl bg-white/70 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[2.5rem] px-6 lg:px-10 py-2.5'
+                            : 'w-full max-w-7xl bg-transparent px-8 lg:px-20 py-2'
                         }
                     `}
                 >
@@ -107,21 +109,29 @@ const Header: React.FC = () => {
                     <Link
                         to="/"
                         onClick={(e) => handleScrollTo(e as any, '#')}
-                        className="flex items-center gap-3 group relative z-10 whitespace-nowrap"
+                        className="relative z-10"
                     >
                         <motion.div
-                            whileHover={{ scale: 1.05, rotate: 5 }}
+                            whileHover={{ scale: 1.05, rotate: 2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/10"
+                            className="flex items-center gap-3 group cursor-pointer"
                         >
-                            <img src={logo} alt="Logo" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/10">
+                                <img
+                                    src={logo}
+                                    alt="Logo"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                            </div>
+                            <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+                                <h2 className="text-[#0d121b] dark:text-white text-lg lg:text-xl font-black leading-none tracking-tight">
+                                    The Rock
+                                </h2>
+                                <span className="text-[#0048ad] text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] opacity-80">
+                                    of Praise
+                                </span>
+                            </div>
                         </motion.div>
-                        <div className="flex items-baseline gap-1.5 whitespace-nowrap">
-                            <h2 className="text-[#0d121b] dark:text-white text-lg lg:text-xl font-black leading-none tracking-tight">
-                                The Rock
-                            </h2>
-                            <span className="text-[#0048ad] text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em]">of Praise</span>
-                        </div>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -132,7 +142,7 @@ const Header: React.FC = () => {
                                 href={location.pathname === '/' ? item.href : `/${item.href}`}
                                 onClick={(e) => handleScrollTo(e, item.href)}
                                 className={`
-                                    relative px-4 py-2 text-[13px] font-bold uppercase tracking-widest transition-colors z-10 whitespace-nowrap
+                                    relative px-5 py-2.5 text-[13px] font-bold uppercase tracking-widest transition-colors z-10 whitespace-nowrap
                                     ${activeSection === item.href
                                         ? 'text-[#0048ad]'
                                         : 'text-[#0d121b]/70 dark:text-gray-300 hover:text-[#0048ad]'
@@ -141,11 +151,11 @@ const Header: React.FC = () => {
                                 whileHover={{ y: -1 }}
                                 whileTap={{ y: 0 }}
                             >
-                                {item.name}
+                                <span className="relative z-10">{item.name}</span>
                                 {activeSection === item.href && (
                                     <motion.span
                                         layoutId="nav-pill"
-                                        className="absolute inset-0 bg-blue-50/80 dark:bg-blue-900/30 rounded-full -z-10 border border-blue-100/50 dark:border-blue-800/30 shadow-sm"
+                                        className="absolute inset-0 bg-blue-50/80 dark:bg-blue-900/30 rounded-full z-0 border border-blue-100/50 dark:border-blue-800/30 shadow-sm"
                                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                     />
                                 )}
@@ -158,10 +168,13 @@ const Header: React.FC = () => {
                         <motion.button
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
-                            className="hidden md:flex items-center gap-2 bg-[#0048ad] text-white px-7 py-3 rounded-full font-bold text-[12px] uppercase tracking-[0.15em] shadow-xl shadow-blue-900/10 hover:shadow-blue-900/30 transition-all group"
+                            className="hidden md:flex items-center gap-2 bg-[#0048ad] text-white px-7 py-3 rounded-full font-bold text-[12px] uppercase tracking-[0.2em] shadow-xl shadow-blue-900/10 hover:shadow-blue-900/30 transition-all group overflow-hidden relative"
                         >
-                            <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                            <span>Download</span>
+                            <motion.div
+                                className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"
+                            />
+                            <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform relative z-10" />
+                            <span className="relative z-10">Download</span>
                         </motion.button>
 
                         {/* Mobile Menu Button */}
@@ -189,23 +202,24 @@ const Header: React.FC = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
                         className="absolute top-24 left-0 right-0 mx-4 overflow-hidden pointer-events-auto"
                     >
-                        <div className="bg-white/80 dark:bg-slate-900/90 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/20 dark:border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)]">
+                        <div className="bg-white/90 dark:bg-slate-900/95 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/20 dark:border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)]">
                             <nav className="flex flex-col gap-2">
                                 {navLinks.map((item, index) => (
                                     <motion.a
                                         key={item.name}
-                                        initial={{ opacity: 0, x: -10 }}
+                                        initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.05 }}
                                         href={location.pathname === '/' ? item.href : `/${item.href}`}
                                         onClick={(e) => handleScrollTo(e, item.href)}
                                         className={`flex items-center justify-between group px-6 py-4 rounded-2xl transition-all ${activeSection === item.href
-                                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                                                ? 'bg-[#0048ad] text-white shadow-lg shadow-blue-600/20'
                                                 : 'hover:bg-black/5 dark:hover:bg-white/5 text-[#0d121b] dark:text-white'
                                             }`}
                                     >
@@ -214,7 +228,7 @@ const Header: React.FC = () => {
                                     </motion.a>
                                 ))}
                                 <motion.button
-                                    initial={{ opacity: 0, y: 10 }}
+                                    initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}
                                     className="mt-6 bg-[#0048ad] text-white p-5 rounded-2xl font-bold text-lg w-full shadow-2xl shadow-blue-900/30 flex items-center justify-center gap-3 active:scale-95 transition-transform"
