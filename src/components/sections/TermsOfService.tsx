@@ -9,8 +9,8 @@ const TermsOfService = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const Section = ({ icon: Icon, title, children, id }: { icon: any, title: string, children: React.ReactNode, id?: string }) => (
-        <div className="mb-12 relative group" id={id}>
+    const Section = ({ icon: Icon, title, children, id, className = "" }: { icon: any, title: string, children: React.ReactNode, id?: string, className?: string }) => (
+        <div className={`mb-12 relative group ${className}`} id={id}>
             <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-[#1349ec]/10 rounded-2xl flex items-center justify-center text-[#1349ec] transition-colors group-hover:bg-[#1349ec] group-hover:text-white">
                     <Icon size={24} />
