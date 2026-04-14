@@ -47,7 +47,7 @@ const Footer = () => {
                         <ul className="flex flex-col gap-4">
                             <FooterLink href="#contact">Contact Us</FooterLink>
                             <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
-                            <FooterLink href="#terms">Terms of Service</FooterLink>
+                            <FooterLink to="/terms-of-service">Terms of Service</FooterLink>
                             <FooterLink to="/faq">FAQ</FooterLink>
                         </ul>
                     </div>

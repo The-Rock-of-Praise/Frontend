@@ -123,6 +123,45 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* --- Infinite Marquee Section --- */}
+                <div className="absolute bottom-0 left-0 w-full z-20">
+                    <div className="w-full bg-white/40 backdrop-blur-md border-y border-white/50 py-6 relative overflow-hidden group/marquee">
+                        {/* Edge Fade Masks */}
+                        <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-[#f6f6f8] via-[#f6f6f8]/80 to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-[#f6f6f8] via-[#f6f6f8]/80 to-transparent z-10 pointer-events-none"></div>
+
+                        <motion.div
+                            className="flex whitespace-nowrap gap-12 items-center animate-marquee hover:[animation-play-state:paused] cursor-default"
+                            initial={false}
+                        >
+                            {/* Original Keywords */}
+                            {[
+                                "Worship", "Praise", "Lyrics", "Sinhala", "Tamil", "English",
+                                "Offline Access", "Setlists", "Community", "The Rock of Praise"
+                            ].map((word, idx) => (
+                                <div key={idx} className="flex items-center gap-12">
+                                    <span className="text-sm sm:text-base text-slate-900/80 font-black uppercase tracking-[0.3em]">
+                                        {word}
+                                    </span>
+                                    <span className="text-[#1349ec]/30 text-xl font-black">•</span>
+                                </div>
+                            ))}
+                            {/* Duplicated Keywords for seamless loop */}
+                            {[
+                                "Worship", "Praise", "Lyrics", "Sinhala", "Tamil", "English",
+                                "Offline Access", "Setlists", "Community", "The Rock of Praise"
+                            ].map((word, idx) => (
+                                <div key={`dub-${idx}`} className="flex items-center gap-12">
+                                    <span className="text-sm sm:text-base text-slate-900/80 font-black uppercase tracking-[0.3em]">
+                                        {word}
+                                    </span>
+                                    <span className="text-[#1349ec]/30 text-xl font-black">•</span>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </div>
             </main>
 
             {/* --- Features Summary Section --- */}

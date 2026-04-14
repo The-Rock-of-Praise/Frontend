@@ -9,6 +9,7 @@ import Downloads from './components/sections/Downloads';
 import Vision from './components/sections/Vision';
 import ProVersion from './components/sections/ProVersion';
 import PrivacyPolicy from './components/sections/PrivacyPolicy';
+import TermsOfService from './components/sections/TermsOfService';
 import FAQ from './components/sections/FAQ';
 
 const LandingPage = () => {
@@ -56,6 +57,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/faq" element={<FAQ />} />
         {/* Redirect any other unknown routes to home */}
         <Route path="*" element={<LandingPage />} />
