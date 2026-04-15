@@ -178,8 +178,9 @@ const Header: React.FC = () => {
                         >
                             Contact
                         </motion.a>
-                        
+
                         <motion.button
+                            onClick={(e) => handleScrollTo(e as any, '#downloads')}
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             className="hidden md:flex items-center gap-2.5 bg-gradient-to-br from-[#0048ad] to-[#0066ff] text-white px-8 py-3.5 rounded-full font-black text-[11px] uppercase tracking-[0.25em] shadow-[0_10px_20px_rgba(0,72,173,0.3)] hover:shadow-[0_15px_30px_rgba(0,72,173,0.4)] transition-all group overflow-hidden relative"
@@ -231,8 +232,8 @@ const Header: React.FC = () => {
                                         href={location.pathname === '/' ? item.href : `/${item.href}`}
                                         onClick={(e) => handleScrollTo(e, item.href)}
                                         className={`flex items-center justify-between group px-7 py-4.5 rounded-[1.5rem] transition-all duration-300 ${activeSection === item.href
-                                                ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
-                                                : 'hover:bg-black/5 dark:hover:bg-white/5 text-[#0d121b] dark:text-white border border-transparent hover:border-black/5 dark:hover:border-white/5'
+                                            ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
+                                            : 'hover:bg-black/5 dark:hover:bg-white/5 text-[#0d121b] dark:text-white border border-transparent hover:border-black/5 dark:hover:border-white/5'
                                             }`}
                                     >
                                         <div className="flex flex-col">
@@ -256,6 +257,7 @@ const Header: React.FC = () => {
                                 </motion.a>
 
                                 <motion.button
+                                    onClick={(e) => handleScrollTo(e as any, '#downloads')}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}

@@ -204,9 +204,9 @@ const Downloads = () => {
                 {/* --- Stats Footer --- */}
                 <footer className="max-w-7xl mx-auto px-6 pb-5">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-t border-slate-200">
-                        <StatItem value="500k+" label="Downloads" />
-                        <StatItem value="4.9" label="Rating" />
-                        <StatItem value="120+" label="Countries" />
+                        <StatItem value="-" label="Downloads" />
+                        <StatItem value="-" label="Rating" />
+                        <StatItem value="-" label="Countries" />
                         <StatItem value="24/7" label="Worship" />
                     </div>
                 </footer>
