@@ -80,7 +80,7 @@ const Downloads = () => {
                             <div className="w-full h-full rounded-[2.2rem] overflow-hidden bg-white relative">
                                 <img
                                     alt="App Interface"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover scale-110"
                                     src={phoneLogo}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#1349ec]/90 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
