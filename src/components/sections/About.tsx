@@ -183,7 +183,7 @@ const About = () => {
                         {/* Feature Cards Grid (Updated to match other components) */}
                         <div className="mt-12 grid sm:grid-cols-2 gap-6 relative z-10">
                             <AboutFeatureCard Icon={ScrollText} title="Lyric Control" desc="Smooth, latency-free transitions for lyrics in any environment." />
-                            <AboutFeatureCard Icon={Music} title="Chord Engine" desc="Instantly transpose and share charts with your entire band." />
+                            <AboutFeatureCard Icon={Music} title="Song Library" desc="Smooth, organized access to thousands of Christian worship lyrics in English, Sinhala, and Tamil." />
                             <AboutFeatureCard Icon={Users} title="Leader Focused" desc="Intuitive interface designed to keep you focused on worship." />
                             <AboutFeatureCard Icon={Languages} title="Global Reach" desc="Supporting diverse cultures with native language rendering." />
                         </div>
