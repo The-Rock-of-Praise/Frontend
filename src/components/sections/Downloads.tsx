@@ -189,9 +189,9 @@ const Downloads = () => {
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-4 pt-6 border-t border-slate-500/20">
-                                        <img alt={review.name} className="w-12 h-12 rounded-full object-cover ring-4 ring-[#1349ec]/5" src={review.image} />
+                                        {/* <img alt={review.name} className="w-12 h-12 rounded-full object-cover ring-4 ring-[#1349ec]/5" src={review.image} /> */}
                                         <div>
-                                            <h5 className="font-bold text-slate-900 leading-none mb-1">{review.name}</h5>
+                                            {/* <h5 className="font-bold text-slate-900 leading-none mb-1">{review.name}</h5> */}
                                             <p className="text-xs text-[#1349ec] font-bold uppercase tracking-widest">{review.role}</p>
                                         </div>
                                     </div>

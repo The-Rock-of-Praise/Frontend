@@ -10,7 +10,7 @@ import {
     Maximize,
     Volume2,
     VolumeOff,
-    Play,
+    Play
 } from 'lucide-react';
 import Intro from '../../assets/Intro.mp4';
 import { useRef, useState } from 'react';
@@ -86,8 +86,8 @@ const About = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2 text-slate-900">Vision</h3>
-                                    <p className="text-slate-500 leading-relaxed max-w-md">
-                                        To revolutionize the worship experience by providing a seamless digital bridge between traditional reverence and modern accessibility.
+                                    <p className="text-slate-500 leading-relaxed max-w-md text-justify">
+                                        To glorify God by equipping believers worldwide with a powerful, multilingual worship resource, inspiring hearts to praise Him anytime, anywhere, and fostering a global community united in worship and love for Jesus Christ.
                                     </p>
                                 </div>
                             </div>
@@ -96,10 +96,13 @@ const About = () => {
                                 <div className="mt-1 bg-white p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
                                     <Sparkles size={28} />
                                 </div>
-                                <div>
+                                <div className="flex-1">
                                     <h3 className="text-xl font-bold mb-2 text-slate-900">Mission</h3>
-                                    <p className="text-slate-500 leading-relaxed max-w-md">
-                                        Simplifying worship management through intuitive software that handles lyrics, chords, and multilingual support with effortless elegance.
+                                    <p className="text-slate-500 leading-relaxed max-w-lg text-justify">
+                                        To provide believers with a comprehensive, multilingual worship lyrics platform that is easy to use, spiritually enriching, and accessible anytime, anywhere.
+                                    </p>
+                                    <p className="mt-4 text-slate-500 leading-relaxed max-w-lg text-justify font-medium italic">
+                                        We aim to preserve the integrity of every song, empower worship leaders, choirs, youth groups, and individuals to lead and participate in meaningful praise, and use technology as a tool to glorify God, strengthen faith, and unite the global Body of Christ in worship.
                                     </p>
                                 </div>
                             </div>
@@ -192,15 +195,32 @@ const About = () => {
     );
 };
 
-// Sub-component for Feature Cards
+// Sub-component for individual feature cards
 const AboutFeatureCard = ({ Icon, title, desc }: { Icon: any, title: string, desc: string }) => (
-    <div className="bg-white p-6 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-white hover:border-[#1349ec]/20 hover:-translate-y-1 transition-all duration-300 group">
-        <div className="w-12 h-12 rounded-2xl bg-[#1349ec]/10 flex items-center justify-center mb-4 text-[#1349ec] group-hover:bg-[#1349ec] group-hover:text-white transition-all duration-500">
-            <Icon size={24} strokeWidth={2} />
+    <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#1349ec]/20 transition-all group">
+        <div className="w-12 h-12 bg-[#1349ec]/10 rounded-2xl flex items-center justify-center text-[#1349ec] mb-4 group-hover:scale-110 transition-transform">
+            <Icon size={24} />
         </div>
-        <h4 className="font-bold text-slate-900 mb-2">{title}</h4>
-        <p className="text-sm text-slate-500 font-medium leading-relaxed">{desc}</p>
+        <h4 className="text-lg font-bold text-slate-900 mb-2">{title}</h4>
+        <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
     </div>
 );
+
+// Sub-component for individual point items
+// const DetailItem = ({ title, desc, isPurpose = false }: { title: string, desc: string, isPurpose?: boolean }) => (
+//     <div className="flex gap-4 items-start group/item">
+//         <div className={`mt-1 shrink-0 ${isPurpose ? 'text-[#1349ec]' : 'text-sky-500'}`}>
+//             <CheckCircle2 size={18} className="transition-transform group-hover/item:scale-110" />
+//         </div>
+//         <div>
+//             <span className="block font-bold text-slate-800 text-sm group-hover/item:text-[#1349ec] transition-colors">
+//                 {title}
+//             </span>
+//             <span className="text-slate-500 text-sm leading-relaxed">
+//                 {desc}
+//             </span>
+//         </div>
+//     </div>
+// );
 
 export default About;

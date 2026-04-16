@@ -9,6 +9,10 @@ import {
     Eye,
     Star,
     Heart,
+    Globe2,
+    SignalLow,
+    Music,
+    Users,
 } from 'lucide-react';
 import Profile from '../../assets/Profile.jpeg';
 
@@ -222,6 +226,86 @@ const Vision = () => {
                     </div>
                 </section>
 
+                {/* --- Target & Purpose Section (Under Main Content) --- */}
+                <div className="mt-20 w-full bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-blue-900/5 border border-white">
+                    <div className="grid lg:grid-cols-2 gap-16">
+                        {/* Target Column */}
+                        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                            <header>
+                                <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Foundation</span>
+                                <h3 className="font-serif italic text-4xl text-slate-900">Target Audience</h3>
+                                <p className="mt-4 text-slate-600 max-w-xl text-sm leading-relaxed italic">
+                                    We are called to serve the global Body of Christ, providing tools that empower every believer in their worship journey.
+                                </p>
+                            </header>
+
+                            <div className="grid grid-cols-1 gap-4">
+                                <TargetItem
+                                    icon={<Music size={18} />}
+                                    title="Worship Leaders and Musicians"
+                                    desc="For planning and leading congregational worship."
+                                />
+                                <TargetItem
+                                    icon={<Users size={18} />}
+                                    title="Choirs and Youth Teams"
+                                    desc="To organize rehearsals and worship sets."
+                                />
+                                <TargetItem
+                                    icon={<Heart size={18} />}
+                                    title="Individual Believers"
+                                    desc="Seeking to deepen personal worship and spiritual growth."
+                                />
+                                <TargetItem
+                                    icon={<Globe2 size={18} />}
+                                    title="Churches & Ministries Worldwide"
+                                    desc="For use in services, events, and outreach programs."
+                                />
+                                <TargetItem
+                                    icon={<SignalLow size={18} />}
+                                    title="Communities in Remote Areas"
+                                    desc="Providing access to worship resources even where internet is limited."
+                                />
+                                <TargetItem
+                                    icon={<Sparkles size={18} />}
+                                    title="Christians of All Ages and Backgrounds"
+                                    desc="Anyone who desires to praise God anytime, anywhere."
+                                />
+                            </div>
+                        </div>
+
+                        {/* Purpose Column */}
+                        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+                            <header>
+                                <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Mandate</span>
+                                <h3 className="font-serif italic text-4xl text-slate-900">Purpose</h3>
+                            </header>
+
+                            <div className="space-y-4">
+                                <PurposeCard
+                                    title="Multilingual Accessibility"
+                                    text="To make 5,000+ Christian songs accessible in English, Sinhala, and Tamil, preserving the original meaning and integrity of each song."
+                                />
+                                <PurposeCard
+                                    title="Equipping the Church"
+                                    text="To equip worship leaders, choirs, youth teams, and individual believers with tools that enhance personal and corporate worship."
+                                />
+                                <PurposeCard
+                                    title="Digital Excellence"
+                                    text="To use modern technology to glorify God, enabling worship anytime and anywhere, including areas with limited internet access."
+                                />
+                                <PurposeCard
+                                    title="Unity & Connection"
+                                    text="To encourage unity among believers worldwide, breaking language and cultural barriers through the shared joy of praising God."
+                                />
+                                <PurposeCard
+                                    title="Spiritual Growth"
+                                    text="To support spiritual growth and foster a deeper, lifelong connection with God through song and worship."
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* --- Bottom CTA Section --- */}
                 <div className="mt-20 text-center">
                     <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent w-full mb-12"></div>
@@ -247,4 +331,24 @@ const Vision = () => {
 };
 
 export default Vision;
+
+// Sub-components for The Vision Tab
+const TargetItem = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
+    <div className="flex gap-4 p-4 rounded-2xl border border-slate-50 hover:bg-slate-50 transition-colors group">
+        <div className="mt-1 w-10 h-10 shrink-0 bg-[#1349ec]/5 text-[#1349ec] rounded-xl flex items-center justify-center group-hover:bg-[#1349ec] group-hover:text-white transition-all">
+            {icon}
+        </div>
+        <div>
+            <h4 className="font-bold text-slate-900 text-sm mb-1">{title}</h4>
+            <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
+        </div>
+    </div>
+);
+
+const PurposeCard = ({ title, text }: { title: string, text: string }) => (
+    <div className="bg-slate-50/50 p-6 rounded-3xl border border-slate-100 hover:border-[#1349ec]/20 transition-all">
+        <h4 className="text-[10px] font-bold tracking-widest uppercase text-[#1349ec] mb-2">{title}</h4>
+        <p className="text-slate-700 text-sm leading-relaxed font-medium">{text}</p>
+    </div>
+);
 
