@@ -215,9 +215,9 @@ const ProVersion: React.FC = () => {
                         <div className="md:col-span-2 bg-slate-50/80 backdrop-blur-md rounded-[2.5rem] p-10 flex flex-col justify-center items-center text-center border border-slate-100 shadow-sm">
                             <Heart className="w-12 h-12 text-blue-500 mb-6 fill-blue-500/20" strokeWidth={1.5} />
                             <blockquote className="text-2xl font-['Plus_Jakarta_Sans'] font-medium italic text-slate-800 leading-tight mb-6">
-                                "Freely you have received; freely give."
+                                "let us sing to the LORD! Let us shout joyfully to the Rock of our salvation."
                             </blockquote>
-                            <cite className="block text-blue-600 text-sm font-bold uppercase tracking-widest not-italic">— Matthew 10:8</cite>
+                            <cite className="block text-blue-600 text-sm font-bold uppercase tracking-widest not-italic">Psalms 95 : 1</cite>
                             <p className="mt-6 text-sm text-slate-500 max-w-sm font-medium leading-relaxed">
                                 Join thousands in a mission where everyone, regardless of language, can encounter the Rock of Salvation.
                             </p>
