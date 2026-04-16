@@ -160,11 +160,11 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="text-blue-100/40 text-sm font-light text-center md:text-left">
+                    <div className="text-blue-100/40 text-sm font-light text-center md:text-left order-2 md:order-1">
                         © {new Date().getFullYear()} The Rock of Praise. All rights reserved. Made with <span className="text-red-500">❤️</span> for the global Christian community.
                     </div>
 
-                    <div className="flex flex-col items-center md:items-end gap-3">
+                    <div className="flex flex-col items-center md:items-end gap-3 order-1 md:order-2">
                         <div className="flex items-center gap-6">
                             <SocialIcon
                                 href="https://www.facebook.com/share/1F8qumg3oz/?mibextid=wwXIfr"

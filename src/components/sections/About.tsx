@@ -60,27 +60,27 @@ const About = () => {
                 <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-sky-400/10 blur-[120px] rounded-full"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10 py-20">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 relative z-10 py-12 md:py-20">
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
 
                     {/* Left Column: Text Content */}
-                    <div className="space-y-12">
+                    <div className="space-y-10 md:space-y-12">
                         <div className="space-y-4">
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 text-[#1349ec] text-sm font-bold tracking-wider uppercase">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 text-[#1349ec] text-xs md:text-sm font-bold tracking-wider uppercase">
                                 Our Essence
                             </span>
-                            <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-tight text-slate-900">
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-tight text-slate-900">
                                 The Rock of <br />
                                 <span className="text-[#1349ec]">Praise</span>
                             </h1>
-                            <p className="text-slate-500 text-xl max-w-lg leading-relaxed font-medium">
+                            <p className="text-slate-500 text-lg md:text-xl max-w-lg leading-relaxed font-medium">
                                 Elevating worship through digital excellence, bridging hearts and technology with grace.
                             </p>
                         </div>
 
                         {/* Vision & Mission Cards */}
                         <div className="space-y-8">
-                            <div className="flex gap-6 items-start group">
+                            <div className="flex gap-4 md:gap-6 items-start group">
                                 <div className="mt-1 bg-white p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
                                     <Eye size={28} />
                                 </div>
@@ -92,16 +92,16 @@ const About = () => {
                                 </div>
                             </div>
 
-                            <div className="flex gap-6 items-start group">
-                                <div className="mt-1 bg-white p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
-                                    <Sparkles size={28} />
+                            <div className="flex gap-4 md:gap-6 items-start group">
+                                <div className="mt-1 bg-white p-3 md:p-4 rounded-2xl shadow-lg shadow-blue-900/5 border border-slate-100 group-hover:border-[#1349ec]/30 transition-all text-[#1349ec]">
+                                    <Sparkles size={24} className="md:w-[28px] md:h-[28px]" />
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-xl font-bold mb-2 text-slate-900">Mission</h3>
-                                    <p className="text-slate-500 leading-relaxed max-w-lg text-justify">
+                                    <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-lg text-justify">
                                         To provide believers with a comprehensive, multilingual worship lyrics platform that is easy to use, spiritually enriching, and accessible anytime, anywhere.
                                     </p>
-                                    <p className="mt-4 text-slate-500 leading-relaxed max-w-lg text-justify font-medium italic">
+                                    <p className="mt-3 md:mt-4 text-slate-500 text-sm md:text-base leading-relaxed max-w-lg text-justify font-medium italic">
                                         We aim to preserve the integrity of every song, empower worship leaders, choirs, youth groups, and individuals to lead and participate in meaningful praise, and use technology as a tool to glorify God, strengthen faith, and unite the global Body of Christ in worship.
                                     </p>
                                 </div>
@@ -126,10 +126,10 @@ const About = () => {
                     </div>
 
                     {/* Right Column: Visuals & Feature Grid */}
-                    <div className="relative py-12">
+                    <div className="relative py-8 md:py-12">
                         {/* Video Mockup with White Border for Premium Look */}
                         <div className="relative z-20 lg:-ml-12 transform hover:scale-[1.02] transition-transform duration-700">
-                            <div className="aspect-video w-full rounded-[2rem] overflow-hidden bg-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative border-[12px] border-white">
+                            <div className="aspect-video w-full rounded-2xl md:rounded-[2rem] overflow-hidden bg-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] relative border-[6px] md:border-[12px] border-white">
                                 <video
                                     ref={videoRef}
                                     onTimeUpdate={handleTimeUpdate}
@@ -147,19 +147,19 @@ const About = () => {
                                 {/* Play/Pause Overlay (වීඩියෝ එක මැද තියෙන බටන් එක) */}
                                 {!isPlaying && (
                                     <div className="absolute inset-0 flex items-center justify-center bg-slate-900/20">
-                                        <button onClick={togglePlay} className="w-20 h-20 bg-white text-[#1349ec] rounded-full flex items-center justify-center shadow-2xl">
-                                            <Play size={32} fill="currentColor" className="ml-1" />
+                                        <button onClick={togglePlay} className="w-16 h-16 md:w-20 md:h-20 bg-white text-[#1349ec] rounded-full flex items-center justify-center shadow-2xl">
+                                            <Play size={28} className="md:w-8 md:h-8 ml-1" fill="currentColor" />
                                         </button>
                                     </div>
                                 )}
 
                                 {/* Custom Control Bar */}
-                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 backdrop-blur-md rounded-2xl px-6 py-4 flex items-center justify-between shadow-xl">
-                                    <div className="flex items-center gap-4 text-slate-900">
+                                <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 w-[95%] md:w-[90%] bg-white/90 backdrop-blur-md rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 flex items-center justify-between shadow-xl">
+                                    <div className="flex items-center gap-3 md:gap-4 text-slate-900">
                                         <button onClick={togglePlay} className="text-[#1349ec]">
-                                            {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
+                                            {isPlaying ? <Pause size={16} className="md:w-[18px] md:h-[18px]" fill="currentColor" /> : <Play size={16} className="md:w-[18px] md:h-[18px]" fill="currentColor" />}
                                         </button>
-                                        <div className="w-32 h-1.5 bg-slate-200 rounded-full relative overflow-hidden">
+                                        <div className="w-20 sm:w-32 h-1.5 bg-slate-200 rounded-full relative overflow-hidden">
                                             <div
                                                 className="absolute top-0 left-0 h-full bg-[#1349ec] rounded-full transition-all duration-100"
                                                 style={{ width: `${progress}%` }}
@@ -167,13 +167,13 @@ const About = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center gap-4 text-slate-500">
+                                    <div className="flex items-center gap-3 md:gap-4 text-slate-500">
                                         {/* Volume Button */}
                                         <button onClick={() => setIsMuted(!isMuted)} className="text-[#1349ec] hover:scale-110 transition-transform">
-                                            {isMuted ? <VolumeOff size={18} /> : <Volume2 size={18} />}
+                                            {isMuted ? <VolumeOff size={16} className="md:w-[18px] md:h-[18px]" /> : <Volume2 size={16} className="md:w-[18px] md:h-[18px]" />}
                                         </button>
                                         <button onClick={toggleFullScreen} className="hover:text-[#1349ec]">
-                                            <Maximize size={18} />
+                                            <Maximize size={16} className="md:w-[18px] md:h-[18px]" />
                                         </button>
                                     </div>
                                 </div>

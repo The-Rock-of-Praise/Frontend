@@ -276,7 +276,7 @@ const ProVersion: React.FC = () => {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl -ml-20 -mb-20"></div>
 
-                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
                         <div className="max-w-xl">
                             <h2 className="text-3xl md:text-4xl font-bold font-['Poppins'] mb-4 tracking-tight drop-shadow-sm">Ready to Start Your Pro Journey?</h2>
                             <p className="text-blue-100/90 text-lg font-medium leading-relaxed">

@@ -72,10 +72,10 @@ const NewReleases = () => {
 
                 {/* --- Header Section --- */}
                 <header className="mb-12 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 border border-[#1349ec]/20 text-[#1349ec] text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                    <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-[#1349ec]/10 border border-[#1349ec]/20 text-[#1349ec] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4">
                         Exclusive Premiere
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-4">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-4">
                         New Song <span className="text-[#1349ec]">Updates</span>
                     </h1>
                     <p className="text-slate-500 text-lg max-w-md mx-auto">
@@ -96,18 +96,18 @@ const NewReleases = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 md:left-10 z-40 bg-white border border-slate-200 p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
+                        className="absolute left-0 md:left-10 z-40 bg-white border border-slate-200 p-3 md:p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
                     >
-                        <ChevronLeft size={28} />
+                        <ChevronLeft size={24} className="md:w-7 md:h-7" />
                     </button>
 
                     {/* Center Slide (Active) */}
                     <div key={currentSong.id} className="relative z-20 transition-all duration-500 transform scale-100 lg:scale-105 animate-in fade-in zoom-in duration-700">
                         <div className="relative group">
                             {/* Blue glow effect for center card */}
-                            <div className="absolute -inset-4 bg-[#1349ec]/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                            <div className="absolute -inset-4 bg-[#1349ec]/10 rounded-[2.5rem] md:rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-                            <div className="relative w-72 h-72 md:w-[420px] md:h-[420px] rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl shadow-blue-200">
+                            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[420px] lg:h-[420px] rounded-3xl md:rounded-[2.5rem] overflow-hidden border-4 md:border-8 border-white shadow-2xl shadow-blue-200">
                                 <img alt={currentSong.title} className="w-full h-full object-cover" src={currentSong.image} />
                                 <div className="absolute top-6 right-6">
                                     <span className="bg-[#1349ec] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xl">
@@ -118,19 +118,19 @@ const NewReleases = () => {
                         </div>
 
                         {/* Song Info */}
-                        <div className="mt-10 text-center">
-                            <h2 className="text-3xl md:text-5xl font-black mb-2 text-slate-900 tracking-tight">
+                        <div className="mt-8 md:mt-10 text-center">
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-2 text-slate-900 tracking-tight px-12 md:px-0">
                                 {currentSong.title}
                             </h2>
-                            <p className="text-[#1349ec] text-lg md:text-xl font-bold tracking-wide uppercase">{currentSong.artist}</p>
+                            <p className="text-[#1349ec] text-sm md:text-lg lg:text-xl font-bold tracking-wide uppercase">{currentSong.artist}</p>
 
-                            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <button className="w-full sm:w-auto bg-[#1349ec] hover:bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-blue-200 active:scale-95">
-                                    <Play size={20} fill="currentColor" />
+                            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-6 md:px-0">
+                                <button className="w-full sm:w-auto bg-[#1349ec] hover:bg-slate-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-blue-200 active:scale-95 text-sm md:text-base">
+                                    <Play size={18} className="md:w-5 md:h-5" fill="currentColor" />
                                     Listen Now
                                 </button>
-                                <button className="w-full sm:w-auto bg-white border border-slate-200 hover:border-[#1349ec] text-slate-600 hover:text-[#1349ec] px-10 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-sm active:scale-95">
-                                    <FileText size={20} />
+                                <button className="w-full sm:w-auto bg-white border border-slate-200 hover:border-[#1349ec] text-slate-600 hover:text-[#1349ec] px-6 sm:px-10 py-3 sm:py-4 rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-sm active:scale-95 text-sm md:text-base">
+                                    <FileText size={18} className="md:w-5 md:h-5" />
                                     View Lyrics
                                 </button>
                             </div>
@@ -139,9 +139,9 @@ const NewReleases = () => {
 
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 md:right-10 z-40 bg-white border border-slate-200 p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
+                        className="absolute right-0 md:right-10 z-40 bg-white border border-slate-200 p-3 md:p-4 rounded-full text-slate-400 hover:text-[#1349ec] hover:border-[#1349ec] transition-all shadow-lg active:scale-90"
                     >
-                        <ChevronRight size={28} />
+                        <ChevronRight size={24} className="md:w-7 md:h-7" />
                     </button>
 
                     {/* Right Slide (Background) */}

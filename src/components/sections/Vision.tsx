@@ -26,14 +26,14 @@ const Vision = () => {
     ];
 
     return (
-        <div className="bg-[#f6f6f8] text-slate-900 min-h-screen font-['Poppins'] py-20 px-4">
+        <div className="bg-[#f6f6f8] text-slate-900 min-h-screen font-['Poppins'] py-12 md:py-20 px-4">
             <div className="max-w-7xl mx-auto">
 
                 {/* --- Main Card Section --- */}
-                <section className="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-900/5 border border-white">
+                <section className="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-900/5 border border-white">
 
                     {/* Left: Image Side */}
-                    <div className="lg:col-span-5 relative h-[500px] lg:h-[850px] overflow-hidden group">
+                    <div className="lg:col-span-5 relative h-[350px] sm:h-[450px] lg:h-[850px] overflow-hidden group">
                         <img
                             alt="Founder Johnson Shan"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
@@ -42,27 +42,27 @@ const Vision = () => {
                         {/* Light Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
 
-                        <div className="absolute bottom-12 left-12 right-12 text-white">
-                            <div className="mb-6 h-1 w-20 bg-[#1349ec]"></div>
-                            <h2 className="font-serif italic text-5xl md:text-6xl mb-2">Johnson Shan</h2>
-                            <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-blue-400 mb-6">Founder, The Rock of Praise</p>
-                            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md w-fit px-4 py-2 rounded-full border border-white/20">
-                                <CheckCircle2 className="text-blue-400" size={18} />
-                                <span className="text-[10px] font-bold tracking-widest uppercase text-white/90">Established since 2004</span>
+                        <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 right-6 md:right-12 text-white">
+                            <div className="mb-4 md:mb-6 h-1 w-16 md:w-20 bg-[#1349ec]"></div>
+                            <h2 className="font-serif italic text-4xl sm:text-5xl md:text-6xl mb-2">Johnson Shan</h2>
+                            <p className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-blue-400 mb-4 md:mb-6">Founder, The Rock of Praise</p>
+                            <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md w-fit px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
+                                <CheckCircle2 className="text-blue-400 w-4 h-4 md:w-5 md:h-5" />
+                                <span className="text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-white/90">Established since 2004</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Right: Content Side */}
-                    <div className="lg:col-span-7 flex flex-col h-[600px] lg:h-[850px] bg-white">
+                    <div className="lg:col-span-7 flex flex-col h-[60vh] sm:h-[600px] lg:h-[850px] bg-white">
 
                         {/* Tabs Navigation */}
-                        <div className="flex border-b border-slate-100 px-6 md:px-10 overflow-x-auto no-scrollbar bg-slate-50/50">
+                        <div className="flex border-b border-slate-100 px-4 md:px-10 overflow-x-auto no-scrollbar bg-slate-50/50">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`flex items-center gap-2 py-8 px-6 text-[11px] tracking-[0.2em] uppercase transition-all relative whitespace-nowrap ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
+                                    className={`flex items-center gap-2 py-4 md:py-8 px-4 md:px-6 text-[10px] md:text-[11px] tracking-[0.2em] uppercase transition-all relative whitespace-nowrap ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
                                         }`}
                                 >
                                     {tab.icon}
@@ -75,14 +75,14 @@ const Vision = () => {
                         </div>
 
                         {/* Switchable Content */}
-                        <div className="flex-1 overflow-y-auto px-8 md:px-16 py-12 custom-scrollbar">
+                        <div className="flex-1 overflow-y-auto px-4 sm:px-8 md:px-16 py-8 md:py-12 custom-scrollbar">
                             <div className="max-w-2xl mx-auto">
 
                                 {activeTab === 'Behind the Vision' && (
-                                    <div className="space-y-8 animate-in fade-in duration-700">
+                                    <div className="space-y-6 md:space-y-8 animate-in fade-in duration-700">
                                         <header>
-                                            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">My Journey & Testimony</span>
-                                            <h3 className="font-serif italic text-4xl text-slate-900">Behind the Vision</h3>
+                                            <span className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[#1349ec] block mb-2">My Journey & Testimony</span>
+                                            <h3 className="font-serif italic text-3xl md:text-4xl text-slate-900">Behind the Vision</h3>
                                         </header>
 
                                         <div className="text-slate-600 leading-loose space-y-6 text-[16px]">
@@ -176,14 +176,14 @@ const Vision = () => {
                                 )}
 
                                 {activeTab === 'The Vision' && (
-                                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                                    <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                                         <header>
-                                            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Strategic Partnership</span>
-                                            <h3 className="font-serif italic text-4xl text-slate-900">The Vision</h3>
+                                            <span className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Strategic Partnership</span>
+                                            <h3 className="font-serif italic text-3xl md:text-4xl text-slate-900">The Vision</h3>
                                         </header>
-                                        <div className="bg-blue-50/50 p-10 rounded-[2rem] border border-blue-100 relative overflow-hidden">
-                                            <Sparkles className="absolute top-[-20px] right-[-20px] text-blue-200/20" size={120} />
-                                            <p className="text-lg text-slate-700 leading-relaxed font-medium relative z-10">
+                                        <div className="bg-blue-50/50 p-6 sm:p-10 rounded-2xl sm:rounded-[2rem] border border-blue-100 relative overflow-hidden">
+                                            <Sparkles className="absolute top-[-10px] sm:top-[-20px] right-[-10px] sm:right-[-20px] text-blue-200/20" size={120} />
+                                            <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium relative z-10">
                                                 "We're proud to partner with <span className="text-[#1349ec]">JS Christian Productions</span>, sharing a common vision of using technology to advance God's kingdom and bring believers together in worship."
                                             </p>
                                         </div>
@@ -191,10 +191,10 @@ const Vision = () => {
                                 )}
 
                                 {activeTab === 'Our Calling' && (
-                                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                                    <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                                         <header>
-                                            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Mission</span>
-                                            <h3 className="font-serif italic text-4xl text-slate-900">Our Calling</h3>
+                                            <span className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Mission</span>
+                                            <h3 className="font-serif italic text-3xl md:text-4xl text-slate-900">Our Calling</h3>
                                         </header>
                                         <div className="space-y-6">
                                             <p className="text-slate-600 leading-loose text-[16px]">
@@ -227,14 +227,14 @@ const Vision = () => {
                 </section>
 
                 {/* --- Target & Purpose Section (Under Main Content) --- */}
-                <div className="mt-20 w-full bg-white rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-blue-900/5 border border-white">
-                    <div className="grid lg:grid-cols-2 gap-16">
+                <div className="mt-12 md:mt-20 w-full bg-white rounded-3xl md:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-2xl shadow-blue-900/5 border border-white">
+                    <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
                         {/* Target Column */}
-                        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                        <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                             <header>
-                                <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Foundation</span>
-                                <h3 className="font-serif italic text-4xl text-slate-900">Target Audience</h3>
-                                <p className="mt-4 text-slate-600 max-w-xl text-sm leading-relaxed italic">
+                                <span className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Our Foundation</span>
+                                <h3 className="font-serif italic text-3xl md:text-4xl text-slate-900">Target Audience</h3>
+                                <p className="mt-2 md:mt-4 text-slate-600 max-w-xl text-sm leading-relaxed italic">
                                     We are called to serve the global Body of Christ, providing tools that empower every believer in their worship journey.
                                 </p>
                             </header>

@@ -102,28 +102,28 @@ const Downloads = () => {
                     </div>
 
                     {/* Content Side */}
-                    <div className="flex flex-col space-y-8 order-1 lg:order-2 text-center lg:text-left">
+                    <div className="flex flex-col space-y-6 md:space-y-8 order-1 lg:order-2 text-center lg:text-left">
                         <div>
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#1349ec]/10 text-[#1349ec] font-bold text-sm mb-6 uppercase tracking-[0.2em]">
+                            <span className="inline-block px-3 py-1.5 md:px-4 md:py-1.5 rounded-full bg-[#1349ec]/10 text-[#1349ec] font-bold text-xs md:text-sm mb-4 md:mb-6 uppercase tracking-[0.2em]">
                                 Experience Worship Everywhere
                             </span>
-                            <h1 className="text-5xl lg:text-7xl font-black tracking-tight text-slate-900 mb-6">
+                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-slate-900 mb-4 md:mb-6">
                                 Download <span className="text-[#1349ec]">Now</span>
                             </h1>
-                            <p className="text-xl text-slate-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                            <p className="text-lg md:text-xl text-slate-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 Join the global community of believers. Get PraiseFlow on your mobile device today.
                             </p>
                         </div>
 
                         {/* QR Code Glass Box */}
-                        <div className="bg-white/70 backdrop-blur-xl p-6 rounded-[2rem] flex flex-col sm:flex-row items-center gap-8 border border-white/50 shadow-xl max-w-md mx-auto lg:mx-0">
+                        <div className="bg-white/70 backdrop-blur-xl p-4 sm:p-6 rounded-3xl sm:rounded-[2rem] flex flex-col sm:flex-row items-center gap-4 sm:gap-8 border border-white/50 shadow-xl max-w-md mx-auto lg:mx-0">
                             <div className="bg-white p-3 rounded-2xl shadow-inner border border-slate-100 group">
-                                <div className="w-28 h-28 bg-slate-900 flex items-center justify-center rounded-xl relative overflow-hidden">
-                                    <QrCode size={48} className="text-white relative z-10 group-hover:scale-110 transition-transform" />
+                                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-slate-900 flex items-center justify-center rounded-xl relative overflow-hidden">
+                                    <QrCode size={40} className="text-white relative z-10 group-hover:scale-110 transition-transform sm:w-12 sm:h-12" />
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent"></div>
                                 </div>
                             </div>
-                            <div>
+                            <div className="text-center sm:text-left">
                                 <h3 className="text-lg font-bold text-slate-900 mb-1">Scan to Download</h3>
                                 <p className="text-slate-500 text-sm">Point your camera to the code to install instantly.</p>
                             </div>
@@ -161,10 +161,10 @@ const Downloads = () => {
 
                 {/* --- Reviews Section --- */}
                 <div className="relative">
-                    <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-10 md:mb-16 gap-4 md:gap-6">
                         <div className="text-center md:text-left">
-                            <h2 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">Voices of Praise</h2>
-                            <p className="text-slate-500 font-medium tracking-wide">Join thousands experiencing spiritual growth.</p>
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-2 tracking-tight">Voices of Praise</h2>
+                            <p className="text-slate-500 font-medium tracking-wide text-sm md:text-base">Join thousands experiencing spiritual growth.</p>
                         </div>
                     </div>
 
