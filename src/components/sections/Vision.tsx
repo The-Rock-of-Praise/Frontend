@@ -21,7 +21,7 @@ const Vision = () => {
 
     const tabs = [
         { id: 'Behind the Vision', icon: <Eye size={16} /> },
-        { id: 'The Vision', icon: <ScrollText size={16} /> },
+        { id: 'Supported by JS Christian Productions', icon: <ScrollText size={16} /> },
         { id: 'Our Calling', icon: <Sparkles size={16} /> }
     ];
 
@@ -175,7 +175,7 @@ const Vision = () => {
                                     </div>
                                 )}
 
-                                {activeTab === 'The Vision' && (
+                                {activeTab === 'Supported by JS Christian Productions' && (
                                     <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
                                         <header>
                                             <span className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-[#1349ec] block mb-2">Strategic Partnership</span>
@@ -183,8 +183,12 @@ const Vision = () => {
                                         </header>
                                         <div className="bg-blue-50/50 p-6 sm:p-10 rounded-2xl sm:rounded-[2rem] border border-blue-100 relative overflow-hidden">
                                             <Sparkles className="absolute top-[-10px] sm:top-[-20px] right-[-10px] sm:right-[-20px] text-blue-200/20" size={120} />
-                                            <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium relative z-10">
-                                                "We're proud to partner with <span className="text-[#1349ec]">JS Christian Productions</span>, sharing a common vision of using technology to advance God's kingdom and bring believers together in worship."
+                                            <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium relative z-10 whitespace-pre-line">
+                                                The Rock of Praise is supported by JS Christian Productions, a ministry dedicated to using creativity and technology for God’s glory.
+
+                                                Our shared passion is to build tools that empower believers, worship leaders, and churches to worship in spirit and in truth. This partnership allows us to provide a reliable, multilingual platform that brings the global church together through the power of worship.
+
+                                                We encourage you to share this app with others so they too can access accurate worship lyrics and join in praising our Lord — because worship is for everyone, everywhere.
                                             </p>
                                         </div>
                                     </div>
@@ -197,25 +201,10 @@ const Vision = () => {
                                             <h3 className="font-serif italic text-3xl md:text-4xl text-slate-900">Our Calling</h3>
                                         </header>
                                         <div className="space-y-6">
-                                            <p className="text-slate-600 leading-loose text-[16px]">
-                                                This app was born from a simple observation: <span className="text-slate-900 font-semibold italic">worship should be accessible to everyone</span>.
-                                            </p>
-                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Unity</p>
-                                                    <p className="text-sm text-slate-600">Tamil-speaking believers in Sinhala congregations.</p>
-                                                </div>
-                                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Diversity</p>
-                                                    <p className="text-sm text-slate-600">English speakers visiting local churches abroad.</p>
-                                                </div>
-                                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Growth</p>
-                                                    <p className="text-sm text-slate-600">Spiritual enrichment while learning a new language.</p>
-                                                </div>
-                                            </div>
-                                            <p className="bg-slate-900 text-white p-8 rounded-3xl text-center">
-                                                <span className="text-blue-400 font-bold">PraiseFlow</span> ensures you can participate fully in the worship experience, bridging gaps and building the body of Christ.
+                                            <p className="text-slate-600 leading-loose text-[16px] whitespace-pre-line font-medium">
+                                                The Rock of Praise was created with a simple yet powerful vision — to make worship accessible to everyone. Whether you are a Tamil-speaking believer in a Sinhala congregation, an English speaker visiting a local church abroad, or someone eager to learn new worship songs, this platform bridges the language gap in worship.
+
+                                                We believe that worship unites the Body of Christ, and every lyric shared is an opportunity to glorify God and draw closer to Him. Our heart is to see believers everywhere lifting one voice of praise to the King of Kings.
                                             </p>
                                         </div>
                                     </div>
