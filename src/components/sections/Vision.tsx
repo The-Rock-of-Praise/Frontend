@@ -20,9 +20,9 @@ const Vision = () => {
     const [activeTab, setActiveTab] = useState('Behind the Vision');
 
     const tabs = [
-        { id: 'Behind the Vision', icon: <Eye size={16} /> },
-        { id: 'Supported by JS Christian Productions', icon: <ScrollText size={16} /> },
-        { id: 'Our Calling', icon: <Sparkles size={16} /> }
+        { id: 'Behind the Vision', label: 'Behind the Vision', mobileLabel: 'Vision', icon: <Eye size={16} /> },
+        { id: 'Supported by JS Christian Productions', label: 'Supported by JS Christian Productions', mobileLabel: 'JS Productions', icon: <ScrollText size={16} /> },
+        { id: 'Our Calling', label: 'Our Calling', mobileLabel: 'Our Calling', icon: <Sparkles size={16} /> }
     ];
 
     return (
@@ -48,7 +48,7 @@ const Vision = () => {
                             <p className="text-[9px] md:text-[11px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase text-blue-400 mb-4 md:mb-6">Founder, The Rock of Praise</p>
                             <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md w-fit px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/20">
                                 <CheckCircle2 className="text-blue-400 w-4 h-4 md:w-5 md:h-5" />
-                                <span className="text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-white/90">Established since 2004</span>
+                                <span className="text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-white/90">Established since 2020</span>
                             </div>
                         </div>
                     </div>
@@ -57,16 +57,17 @@ const Vision = () => {
                     <div className="lg:col-span-7 flex flex-col h-[60vh] sm:h-[600px] lg:h-[850px] bg-white">
 
                         {/* Tabs Navigation */}
-                        <div className="flex border-b border-slate-100 px-4 md:px-10 overflow-x-auto no-scrollbar bg-slate-50/50">
+                        <div className="flex flex-wrap border-b border-slate-100 px-2 sm:px-4 md:px-10 bg-slate-50/50">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`flex items-center gap-2 py-4 md:py-8 px-4 md:px-6 text-[10px] md:text-[11px] tracking-[0.2em] uppercase transition-all relative whitespace-nowrap ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
+                                    className={`flex items-center gap-1.5 sm:gap-2 py-3 sm:py-4 md:py-8 px-2.5 sm:px-4 md:px-6 text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all relative ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
                                         }`}
                                 >
-                                    {tab.icon}
-                                    {tab.id}
+                                    <span className="hidden sm:inline">{tab.icon}</span>
+                                    <span className="md:hidden">{tab.mobileLabel}</span>
+                                    <span className="hidden md:inline">{tab.label}</span>
                                     {activeTab === tab.id && (
                                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#1349ec] rounded-full"></div>
                                     )}
