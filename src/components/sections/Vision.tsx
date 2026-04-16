@@ -20,9 +20,9 @@ const Vision = () => {
     const [activeTab, setActiveTab] = useState('Behind the Vision');
 
     const tabs = [
-        { id: 'Behind the Vision', label: 'Behind the Vision', mobileLabel: 'Vision', icon: <Eye size={16} /> },
-        { id: 'Supported by JS Christian Productions', label: 'Supported by JS Christian Productions', mobileLabel: 'JS Productions', icon: <ScrollText size={16} /> },
-        { id: 'Our Calling', label: 'Our Calling', mobileLabel: 'Our Calling', icon: <Sparkles size={16} /> }
+        { id: 'Behind the Vision', label: 'Behind the Vision', mobileLabel: 'Vision', icon: <Eye size={14} /> },
+        { id: 'Supported by JS Christian Productions', label: 'JS Christian Productions', mobileLabel: 'JS Productions', icon: <ScrollText size={14} /> },
+        { id: 'Our Calling', label: 'Our Calling', mobileLabel: 'Our Calling', icon: <Sparkles size={14} /> }
     ];
 
     return (
@@ -56,18 +56,18 @@ const Vision = () => {
                     {/* Right: Content Side */}
                     <div className="lg:col-span-7 flex flex-col h-[60vh] sm:h-[600px] lg:h-[850px] bg-white">
 
-                        {/* Tabs Navigation */}
-                        <div className="flex flex-wrap border-b border-slate-100 px-2 sm:px-4 md:px-10 bg-slate-50/50">
+                        {/* Tabs Navigation — single line, no wrapping */}
+                        <div className="flex border-b border-slate-100 px-1 sm:px-2 md:px-6 bg-slate-50/50 overflow-x-auto no-scrollbar">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`flex items-center gap-1.5 sm:gap-2 py-3 sm:py-4 md:py-8 px-2.5 sm:px-4 md:px-6 text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all relative ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
+                                    className={`flex items-center gap-1 sm:gap-1.5 md:gap-2 py-3 sm:py-4 md:py-6 px-2 sm:px-3 md:px-5 text-[8px] sm:text-[9px] md:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase transition-all relative whitespace-nowrap shrink-0 ${activeTab === tab.id ? "text-[#1349ec] font-bold" : "text-slate-400 hover:text-slate-600"
                                         }`}
                                 >
-                                    <span className="hidden sm:inline">{tab.icon}</span>
-                                    <span className="md:hidden">{tab.mobileLabel}</span>
-                                    <span className="hidden md:inline">{tab.label}</span>
+                                    {tab.icon}
+                                    <span className="sm:hidden">{tab.mobileLabel}</span>
+                                    <span className="hidden sm:inline">{tab.label}</span>
                                     {activeTab === tab.id && (
                                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#1349ec] rounded-full"></div>
                                     )}
