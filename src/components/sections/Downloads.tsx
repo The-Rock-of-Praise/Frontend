@@ -73,7 +73,7 @@ const Downloads = () => {
 
                     {/* Floating Phone Mockup */}
                     <div className="relative flex justify-center lg:justify-start order-2 lg:order-1 group">
-                        <div className="relative w-72 h-[580px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl transition-transform duration-700 group-hover:-rotate-2 border-[8px] border-slate-800 animate-bounce [animation-duration:6s]">
+                        <div className="relative w-72 h-[580px] bg-slate-900 rounded-[3rem] p-2.5 shadow-2xl transition-transform duration-700 group-hover:-rotate-2 border-[8px] border-slate-800 animate-bounce [animation-duration:6s]">
                             {/* Notch */}
                             <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20"></div>
 
