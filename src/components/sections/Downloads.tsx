@@ -83,7 +83,7 @@ const Downloads = () => {
                                     className="w-full h-full object-cover scale-110"
                                     src={phoneLogo}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1349ec]/90 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                                {/* <div className="absolute inset-0 bg-gradient-to-t from-[#1349ec]/90 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                                     <h4 className="text-xl font-bold mb-1">Morning Praise</h4>
                                     <p className="text-[10px] opacity-80 mb-4 tracking-wider uppercase font-medium">Now Playing: Eternal Grace</p>
                                     <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ const Downloads = () => {
                                             <div className="w-2/3 h-full bg-white"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         {/* Glow Behind Phone */}
