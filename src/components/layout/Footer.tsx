@@ -60,7 +60,7 @@ const Footer = () => {
                     <div className="space-y-6">
                         <h4 className="text-lg font-semibold text-white">Connect</h4>
                         <ul className="flex flex-col gap-4">
-                            <FooterLink href="https://jscproduction.com/" external>JS Christian Productions</FooterLink>
+                            <FooterLink href="" external>JS Christian Productions</FooterLink>
                             <FooterLink
                                 href="#"
                                 onClick={(e) => {
