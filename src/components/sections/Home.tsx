@@ -28,10 +28,16 @@ const Home = () => {
         brand: string;
         subText: string;
         accentColor: string;
+        href: string;
     }
 
-    const AppBadge = ({ Icon, brand, subText, accentColor }: AppBadgeProps) => (
-        <a href="#" className="group relative w-full sm:w-auto">
+    const AppBadge = ({ Icon, brand, subText, accentColor, href }: AppBadgeProps) => (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative w-full sm:w-auto"
+        >
             <div className="absolute -inset-0.5 bg-[#1349ec]/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative bg-white/70 backdrop-blur-xl border border-white p-3 px-6 rounded-2xl flex items-center justify-center sm:justify-start gap-4 w-full sm:w-[200px] transition-all duration-300 group-hover:bg-white group-hover:-translate-y-1 shadow-lg shadow-blue-900/5">
                 <div className={`transition-all duration-300 ${accentColor} text-slate-600`}>
@@ -111,9 +117,27 @@ const Home = () => {
                         {/* CTA Row */}
                         <div className="flex flex-col items-center gap-14">
                             <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 md:gap-4 w-full">
-                                <AppBadge Icon={Play} brand="Google Play" subText="Get it on" accentColor="group-hover:text-green-600" />
-                                <AppBadge Icon={Apple} brand="App Store" subText="Download on" accentColor="group-hover:text-blue-600" />
-                                <AppBadge Icon={ShoppingBag} brand="AppGallery" subText="Explore on" accentColor="group-hover:text-red-600" />
+                                <AppBadge
+                                    Icon={Play}
+                                    brand="Google Play"
+                                    subText="Get it on"
+                                    accentColor="group-hover:text-green-600"
+                                    href='https://play.google.com/store/apps/details?id=com.therockofpraise.lyrics&pcampaignid=web_share'
+                                />
+                                <AppBadge
+                                    Icon={Apple}
+                                    brand="App Store"
+                                    subText="Download on"
+                                    accentColor="group-hover:text-blue-600"
+                                    href=''
+                                />
+                                <AppBadge
+                                    Icon={ShoppingBag}
+                                    brand="AppGallery"
+                                    subText="Explore on"
+                                    accentColor="group-hover:text-red-600"
+                                    href=''
+                                />
                             </div>
 
                             <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-slate-900 text-white px-8 py-4 md:px-12 md:py-5 rounded-2xl font-black text-lg md:text-xl hover:bg-[#1349ec] transition-all duration-300 shadow-xl shadow-blue-900/20 active:scale-95">

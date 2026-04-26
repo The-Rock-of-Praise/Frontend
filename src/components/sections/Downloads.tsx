@@ -132,27 +132,47 @@ const Downloads = () => {
                         {/* App Badges */}
                         <div className="flex flex-col space-y-6">
                             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                                <button className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
+                                {/* App Store */}
+                                <a
+                                    href=""
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20"
+                                >
                                     <Apple size={24} />
                                     <div className="text-left">
                                         <p className="text-[10px] uppercase opacity-70 leading-none">Download on the</p>
                                         <p className="text-sm font-bold">App Store</p>
                                     </div>
-                                </button>
-                                <button className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
+                                </a>
+
+                                {/* Google Play */}
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.therockofpraise.lyrics&pcampaignid=web_share"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20"
+                                >
                                     <PlayIcon size={24} fill="white" />
                                     <div className="text-left">
                                         <p className="text-[10px] uppercase opacity-70 leading-none">Get it on</p>
                                         <p className="text-sm font-bold">Google Play</p>
                                     </div>
-                                </button>
-                                <button className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20">
+                                </a>
+
+                                {/* AppGallery */}
+                                <a
+                                    href=""
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-2xl hover:scale-105 transition-all shadow-lg hover:shadow-slate-900/20"
+                                >
                                     <LayoutGrid size={24} />
                                     <div className="text-left">
                                         <p className="text-[10px] uppercase opacity-70 leading-none">Explore on</p>
                                         <p className="text-sm font-bold">AppGallery</p>
                                     </div>
-                                </button>
+                                </a>
                             </div>
                             <p className="text-xs text-slate-400 italic">Available for Android 5.0+ and iOS 12.0+</p>
                         </div>
