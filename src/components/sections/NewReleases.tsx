@@ -89,7 +89,7 @@ const NewReleases = () => {
                     {/* Left Slide (Background) */}
                     <div className="hidden lg:block relative opacity-30 scale-90 grayscale transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden shadow-xl">
-                            <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[leftIndex].image} />
+                            <img alt="Album" className="w-full h-full object-cover object-center" src={SONGS_DATA[leftIndex].image} />
                         </div>
                     </div>
 
@@ -108,7 +108,7 @@ const NewReleases = () => {
                             <div className="absolute -inset-4 bg-[#1349ec]/10 rounded-[2.5rem] md:rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
                             <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[420px] lg:h-[420px] rounded-3xl md:rounded-[2.5rem] overflow-hidden border-4 md:border-8 border-white shadow-2xl shadow-blue-200">
-                                <img alt={currentSong.title} className="w-full h-full object-cover" src={currentSong.image} />
+                                <img alt={currentSong.title} className="w-full h-full object-cover object-center" src={currentSong.image} />
                                 <div className="absolute top-6 right-6">
                                     <span className="bg-[#1349ec] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xl">
                                         {currentSong.badge}
@@ -147,7 +147,7 @@ const NewReleases = () => {
                     {/* Right Slide (Background) */}
                     <div className="hidden lg:block relative opacity-30 scale-90 grayscale transition-all duration-700">
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-[2.5rem] overflow-hidden shadow-xl">
-                            <img alt="Album" className="w-full h-full object-cover" src={SONGS_DATA[rightIndex].image} />
+                            <img alt="Album" className="w-full h-full object-cover object-center" src={SONGS_DATA[rightIndex].image} />
                         </div>
                     </div>
                 </div>

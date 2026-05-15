@@ -84,7 +84,7 @@ const Home = () => {
                             animate={{ opacity: 0.6, scale: 1.05 }}
                             exit={{ opacity: 0, scale: 1 }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover object-top"
                             alt="Worship Background"
                         />
                     </AnimatePresence>
