@@ -139,10 +139,10 @@ const PrivacyPolicy = () => {
 
                         <Section icon={HelpCircle} title="6. Availability & Payment Processing">
                             <p className="leading-relaxed text-slate-600 mb-6">
-                                The Rock of Praise is available download via Google Play Store, Apple App Store, and Huawei AppGallery.
+                                The Rock of Praise is available for download through Google Play Store, Apple App Store, and Huawei AppGallery.
                             </p>
                             <p className="leading-relaxed text-slate-600">
-                                Payments for the Pro version are processed securely through <strong>PayHere</strong> (our official payment gateway). PayHere complies with industry-standard payment security and encryption. We do not store your credit card, debit card, or bank details — all transactions are handled directly through PayHere.
+                                Payments for the Pro version are securely processed through the official payment systems provided by Apple App Store, Google Play, and Huawei AppGallery. We do not store your credit card, debit card, or banking information. All transactions are handled securely through the respective app store platforms in compliance with industry-standard payment security and encryption.
                             </p>
                         </Section>
 

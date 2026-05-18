@@ -211,7 +211,7 @@ const TermsOfService = () => {
 
                                 <div>
                                     <h3 className="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">3. Refund Method</h3>
-                                    <p className="text-slate-600">Refunds will be issued through the original payment method via <strong>PayHere, Bank Transfer, or PayPal</strong> (for international users only). Processing may take 5–10 business days.</p>
+                                    <p className="text-slate-600">Refunds are handled according to the policies of the respective app store platform, including Apple App Store, Google Play, and Huawei AppGallery. Users may be required to request refunds directly through the platform used for the original purchase.</p>
                                 </div>
 
                                 <div>
