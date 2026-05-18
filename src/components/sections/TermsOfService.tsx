@@ -141,21 +141,43 @@ const TermsOfService = () => {
                             </div>
                         </Section>
 
-                        <Section icon={AlertCircle} title="6. Disclaimer & Limitation of Liability">
+                        <Section icon={CreditCard} title="6. Availability & Payment Processing">
                             <ul className="space-y-4 text-slate-600 mb-8">
-                                <li>The app provides lyrics for reference and worship purposes; accuracy is maintained to the best of our ability.</li>
-                                <li>The Rock of Praise is not responsible for indirect, incidental, or consequential damages.</li>
-                                <li>We do not guarantee uninterrupted service or full offline functionality at all times.</li>
+                                <li className="flex gap-4">
+                                    <div className="min-w-[6px] h-[6px] rounded-full bg-[#1349ec] mt-2.5"></div>
+                                    <p>The Rock of Praise is available for download through Google Play Store, Apple App Store, and Huawei AppGallery.</p>
+                                </li>
+                                <li className="flex gap-4">
+                                    <div className="min-w-[6px] h-[6px] rounded-full bg-[#1349ec] mt-2.5"></div>
+                                    <p>Payments for the Pro version are securely processed through the official payment systems provided by Apple App Store, Google Play, and Huawei AppGallery. We do not store your credit card, debit card, or banking information. All transactions are handled securely through the respective app store platforms in compliance with industry-standard payment security and encryption.</p>
+                                </li>
                             </ul>
                         </Section>
 
-                        <Section icon={Clock} title="7. Changes to Terms">
+                        <Section icon={AlertCircle} title="7. Disclaimer & Limitation of Liability">
+                            <ul className="space-y-4 text-slate-600 mb-8">
+                                <li className="flex gap-4">
+                                    <div className="min-w-[6px] h-[6px] rounded-full bg-[#1349ec] mt-2.5"></div>
+                                    <p>The app provides lyrics for reference and worship purposes; accuracy is maintained to the best of our ability.</p>
+                                </li>
+                                <li className="flex gap-4">
+                                    <div className="min-w-[6px] h-[6px] rounded-full bg-[#1349ec] mt-2.5"></div>
+                                    <p>The Rock of Praise is not responsible for indirect, incidental, or consequential damages.</p>
+                                </li>
+                                <li className="flex gap-4">
+                                    <div className="min-w-[6px] h-[6px] rounded-full bg-[#1349ec] mt-2.5"></div>
+                                    <p>We do not guarantee uninterrupted service or full offline functionality at all times.</p>
+                                </li>
+                            </ul>
+                        </Section>
+
+                        <Section icon={Clock} title="8. Changes to Terms">
                             <p className="leading-relaxed text-slate-600">
                                 These Terms may be updated at any time to improve your experience. Updated terms take effect upon posting on the website.
                             </p>
                         </Section>
 
-                        <Section icon={Scale} title="8. Governing Law">
+                        <Section icon={Scale} title="9. Governing Law">
                             <p className="leading-relaxed text-slate-600 font-bold">
                                 These Terms are governed by the laws of Sri Lanka.
                             </p>
@@ -199,7 +221,7 @@ const TermsOfService = () => {
                             </div>
                         </div>
 
-                        <Section icon={HelpCircle} title="9. Support" id="support" className="mt-20">
+                        <Section icon={HelpCircle} title="10. Support" id="support" className="mt-20">
                             <div className="p-8 bg-slate-900 rounded-[2rem] text-white flex flex-col items-center text-center gap-6 shadow-2xl">
                                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
                                     <HelpCircle size={32} />
